@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Premium Portfolio - Perfect Pastel Gradient</title>
+    <title>My Premium Portfolio - Custom Pastel Gradient</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -56,9 +56,9 @@
     </style>
 </head>
 
-<!-- 🎨 จุดแก้ไขหลัก: bg-gradient ไล่สีจากฟ้าสว่าง (sky-100) -> ฟ้าละมุน (blue-50) -> ฟ้าพาสเทลเข้มขึ้นนิดนึง (sky-200) 
-     พร้อมใส่ bg-fixed เพื่อล็อกให้สีไล่สวยงามยาว ๆ ทั้งหน้าเว็บตอนเลื่อนเมาส์ครับ -->
-<body class="bg-gradient-to-br from-sky-100 via-blue-50 to-sky-200 bg-fixed text-slate-800 min-h-screen antialiased relative overflow-x-hidden">
+<!-- 🎨 เปลี่ยนมาใช้สี #C3EEFA ของคุณเป็นสีเริ่มต้น (from-[#C3EEFA]) 
+     แล้วค่อยๆ ไล่เฉดไปทางขาวนวล (via-[#E6F8FD]) และจบด้วยฟ้าพาสเทลละมุน (to-[#B2E6F5]) พร้อมล็อกพื้นหลังด้วย bg-fixed ครับ -->
+<body class="bg-gradient-to-br from-[#C3EEFA] via-[#E6F8FD] to-[#B2E6F5] bg-fixed text-slate-800 min-h-screen antialiased relative overflow-x-hidden">
 
     <!-- ================= BACKGROUND ORNAMENTS (ลูกเล่นออร่าพาสเทลจางๆ ด้านหลัง) ================= -->
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -122,7 +122,7 @@
                     <div class="absolute -inset-1.5 bg-gradient-to-r from-sky-400 to-blue-400 rounded-[2.2rem] blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
                     <div class="relative w-72 h-96 md:w-80 md:h-[26rem] bg-white/70 backdrop-blur-md p-3 rounded-[2rem] border border-white/80 shadow-xl">
                         <!-- 📸 รูปโปรไฟล์หลัก -->
-                        <img src="images1.jpg" alt="Profile" class="w-full h-full object-cover rounded-[1.5rem] bg-slate-100" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=500'">
+                        <img src="images/profile.jpg" alt="Profile" class="w-full h-full object-cover rounded-[1.5rem] bg-slate-100" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=500'">
                     </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@
             </h2>
         </div>
         
-        <div class="bg-white/80 backdrop-blur-md border border-white/60 rounded-3xl p-8 md:p-10 shadow-xl shadow-blue-900/5 space-y-6 text-slate-800">
+        <div class="bg-white/80 backdrop-blur-md border border-white/66 rounded-3xl p-8 md:p-10 shadow-xl shadow-blue-900/5 space-y-6 text-slate-800">
             <div class="grid sm:grid-cols-2 gap-6 text-base md:text-lg">
                 <div class="flex items-center gap-4 p-4 bg-white/60 rounded-2xl border border-white/80 hover:bg-white transition-colors">
                     <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl shadow-md shadow-blue-200"><i class="fa-solid fa-user"></i></div>
@@ -218,7 +218,7 @@
     </section>
 
 
-    <!-- ================= PORTFOLIO SECTION (แกลเลอรีรูปภาพผลงาน 10 หน้า - สวยงามแบบโปร่งแสงกึ่งกระจก) ================= -->
+    <!-- ================= PORTFOLIO SECTION (แกลเลอรีรูปภาพผลงาน 10 หน้า) ================= -->
     <section class="py-24 px-6 max-w-7xl mx-auto relative z-10" id="portfolio">
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold tracking-wide inline-block relative pb-3 text-slate-800">
