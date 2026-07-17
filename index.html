@@ -1,526 +1,190 @@
 <!DOCTYPE html>
-<html lang="th" class="scroll-smooth">
+<html lang="th">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Portfolio | ณัฐดา สุขพิทักษ์ (BCN Candidate)</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Sarabun (Formal & Clean) & Mitr (Modern & Elegant Headers) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        bcn: {
-                            base: '#F0F9FF',    /* ฟ้าสว่างนุ่มนวลดุจปุยเมฆ */
-                            light: '#E0F2FE',   /* ฟ้าอ่อนพาสเทลสะอาดตา */
-                            soft: '#BAE6FD',    /* ฟ้าครามนุ่ม */
-                            medium: '#38BDF8',  /* ฟ้าสว่างสดใส */
-                            sky: '#0284C7',     /* ฟ้าเข้มสีท้องฟ้าวันใหม่ */
-                            dark: '#0369A1',    /* น้ำเงินสุภาพเรียบร้อย */
-                            deep: '#075985',    /* น้ำเงินเข้มวิชาชีพ */
-                            navy: '#0C4A6E',    /* สีกรมท่าพยาบาลบรมราชชนนี */
-                            slate: '#0F172A'    /* น้ำเงินมืดพรีเมียม */
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Sarabun', 'sans-serif'],
-                        title: ['Mitr', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        /* สไตล์เสริมเพื่อความหรูหราแบบ All-Blue Premium Theme */
-        ::selection {
-            background-color: #BAE6FD;
-            color: #0C4A6E;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F0F9FF;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #0284C7;
-            border-radius: 9999px;
-            border: 2px solid #F0F9FF;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #0369A1;
-        }
-        
-        /* เอฟเฟกต์ Glow และอนิเมชันคลื่นเบาๆ */
-        .glow-effect {
-            box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #0C4A6E 0%, #0284C7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ณัฐดา สุขพิทักษ์ | Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
-<body class="bg-bcn-base text-slate-800 font-sans antialiased">
 
-    <!-- NAVIGATION BAR -->
-    <nav class="fixed w-full bg-white/70 backdrop-blur-xl border-b border-bcn-light/40 shadow-sm z-50 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="font-title text-xl font-bold text-bcn-navy flex items-center gap-2 tracking-wide">
-                <div class="p-2 bg-bcn-light rounded-xl text-bcn-sky shadow-inner">
-                    <i data-lucide="heart-pulse" class="w-5 h-5 animate-pulse"></i>
-                </div>
-                <span>NATTADA<span class="text-bcn-sky">.PORTFOLIO</span></span>
-            </a>
-            
-            <div class="hidden md:flex gap-8 font-medium text-bcn-navy/80 text-sm">
-                <a href="#home" class="hover:text-bcn-sky transition-colors duration-200">หน้าแรก</a>
-                <a href="#about" class="hover:text-bcn-sky transition-colors duration-200">ประวัติส่วนตัว</a>
-                <a href="#education" class="hover:text-bcn-sky transition-colors duration-200">การศึกษา</a>
-                <a href="#activities" class="hover:text-bcn-sky transition-colors duration-200">กิจกรรมเด่น</a>
-                <a href="#certificates" class="hover:text-bcn-sky transition-colors duration-200">เกียรติบัตร</a>
-                <a href="#contact" class="hover:text-bcn-sky transition-colors duration-200">ช่องทางติดต่อ</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- HERO SECTION (หน้าปกพอร์ตโฟลิโอสุดหรู) -->
-    <section id="home" class="min-h-screen pt-32 pb-20 flex items-center bg-gradient-to-b from-bcn-light via-bcn-base to-white relative overflow-hidden">
-        <!-- ลายเส้นพื้นหลังแนวคลื่นน้ำจางๆ สะท้อนธีมสุขภาพ -->
-        <div class="absolute inset-0 opacity-10 pointer-events-none">
-            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#38BDF8" d="M0,224L60,208C120,192,240,160,360,165.3C480,171,600,213,720,202.7C840,192,960,128,1080,122.7C1200,117,1320,171,1380,197.3L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-            </svg>
-        </div>
+<body>
 
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center relative z-10 w-full">
-            <!-- ซีกซ้าย: ข้อความต้อนรับและปณิธาน -->
-            <div class="md:col-span-7 space-y-6 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 bg-white/90 text-bcn-navy px-4 py-2 rounded-full border border-bcn-soft/60 shadow-sm">
-                    <i data-lucide="award" class="w-4 h-4 text-bcn-sky"></i>
-                    <span class="text-xs md:text-sm font-semibold tracking-wide uppercase">Admission Portfolio 2026</span>
-                </div>
-                
-                <h1 class="font-title text-4xl md:text-6xl font-extrabold text-bcn-navy leading-tight">
-                    ณัฐดา <span class="text-bcn-sky">สุขพิทักษ์</span>
-                </h1>
-                
-                <p class="text-xl md:text-2xl font-light text-slate-600 leading-relaxed">
-                    ผู้สมัครเข้าเรียนต่อระดับปริญญาตรี<br>
-                    <span class="font-semibold text-bcn-dark border-b-4 border-bcn-medium pb-1.5">วิทยาลัยพยาบาลบรมราชชนนี</span>
-                </p>
-                
-                <p class="text-slate-500 leading-relaxed max-w-lg text-base">
-                    มีความมุ่งมั่น มั่นคง และตั้งใจอย่างเต็มเปี่ยมที่จะอุทิศตนเพื่อวิชาชีพพยาบาลและการสาธารณสุข พร้อมดูแลรักษาและฟื้นฟูสุขภาพของเพื่อนมนุษย์ด้วยคุณธรรม จริยธรรม และความรู้ความเชี่ยวชาญค่ะ
-                </p>
-                
-                <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-4">
-                    <a href="#about" class="bg-bcn-sky hover:bg-bcn-dark text-white font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-bcn-sky/20 transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-1">
-                        รู้จักฉันเพิ่มเติม <i data-lucide="user-check" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#contact" class="bg-white hover:bg-bcn-light border-2 border-bcn-light text-bcn-navy font-semibold px-8 py-4 rounded-2xl shadow-sm transition-all duration-300">
-                        ช่องทางติดต่อด่วน
-                    </a>
-                </div>
-            </div>
-            
-            <!-- ซีกขวา: รูปถ่ายพอร์ตโฟลิโอเดี่ยวที่สวยงาม (ภาพคนจริงๆ ในโทนสีฟ้า) -->
-            <div class="md:col-span-5 flex justify-center">
-                <div class="relative w-full max-w-sm">
-                    <!-- เอฟเฟกต์วงแสงไล่สีฟ้ารอบรูปภาพ -->
-                    <div class="absolute -inset-4 bg-gradient-to-tr from-bcn-medium to-bcn-light rounded-[3rem] blur-xl opacity-60 animate-pulse"></div>
-                    
-                    <div class="relative bg-white p-4 rounded-[3rem] shadow-2xl border border-bcn-light">
-                        <div class="aspect-[3/4] rounded-[2.5rem] bg-bcn-light overflow-hidden relative shadow-inner">
-                            <!-- ภาพถ่ายสุภาพสวยงาม เป็นธรรมชาติ คุมโทนสีขาว-ฟ้าอย่างดีเยี่ยม -->
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=688&auto=format&fit=crop" 
-                                 alt="รูปภาพพอร์ตโฟลิโอ ณัฐดา สุขพิทักษ์" 
-                                 class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105">
-                            
-                            <!-- ป้ายกำกับเล็กบนรูปเพิ่มความน่าเชื่อถือ -->
-                            <div class="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md py-2 px-4 rounded-xl text-center border border-white/40 shadow-sm">
-                                <p class="text-xs font-bold text-bcn-navy">Candidate for Nursing Science</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ABOUT ME (ข้อมูลส่วนตัว & ปณิธานความมุ่งมั่น) -->
-    <section id="about" class="py-24 bg-white relative">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-bcn-sky font-semibold tracking-wider uppercase text-sm">Personal Statement</span>
-                <h2 class="font-title text-4xl font-bold text-bcn-navy mt-1">ประวัติส่วนตัว</h2>
-                <div class="w-24 h-1.5 bg-gradient-to-r from-bcn-light via-bcn-sky to-bcn-light mx-auto mt-4 rounded-full"></div>
-            </div>
+<!-- Background Effect -->
+<div class="bg-circle circle1"></div>
+<div class="bg-circle circle2"></div>
 
-            <div class="grid md:grid-cols-12 gap-12 items-stretch">
-                <!-- ฝั่งซ้าย: คติประจำใจและการ์ดค่านิยมวิชาชีพ -->
-                <div class="md:col-span-5 bg-gradient-to-br from-bcn-base to-bcn-light/30 p-8 rounded-[2.5rem] border border-bcn-light/60 flex flex-col justify-between shadow-sm">
-                    <div class="space-y-6">
-                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-md text-bcn-sky">
-                            <i data-lucide="heart" class="w-8 h-8 fill-bcn-sky"></i>
-                        </div>
-                        <h3 class="font-title text-2xl font-bold text-bcn-navy">วิญญาณแห่งวิชาชีพ</h3>
-                        <p class="text-slate-600 leading-relaxed italic text-base">
-                            "หนูเชื่อว่า หัวใจสำคัญของการพยาบาลไม่ใช่เพียงการให้ยารักษาโรค แต่คือการเยียวยาจิตใจและประคับประคองเพื่อนมนุษย์ด้วยความเห็นอกเห็นใจ ความอ่อนโยน และการดูแลอย่างไม่มีอคติค่ะ"
-                        </p>
-                    </div>
-                    
-                    <div class="pt-8 border-t border-bcn-soft/50 mt-8">
-                        <p class="text-xs text-bcn-sky font-bold uppercase tracking-wider">สถาบันในดวงใจ</p>
-                        <p class="text-sm font-semibold text-bcn-navy mt-1">วิทยาลัยพยาบาลบรมราชชนนี เพื่อสืบสานพระราชปณิธานด้านสาธารณสุข</p>
-                    </div>
-                </div>
 
-                <!-- ฝั่งขวา: ข้อมูลทั่วไปสไตล์การแพทย์ทันสมัย -->
-                <div class="md:col-span-7 flex flex-col justify-between space-y-8">
-                    <h3 class="font-title text-2xl font-bold text-bcn-navy">ข้อมูลทั่วไป</h3>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <!-- ชื่อ-นามสกุล -->
-                        <div class="flex items-center gap-4 p-4 rounded-2xl hover:bg-bcn-base/60 transition-all border border-transparent hover:border-bcn-light/50">
-                            <div class="p-3.5 bg-bcn-light rounded-xl text-bcn-sky shadow-sm">
-                                <i data-lucide="user" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400 font-medium">ชื่อจริง - นามสกุล</p>
-                                <p class="font-bold text-bcn-navy">นางสาวณัฐดา สุขพิทักษ์</p>
-                            </div>
-                        </div>
-                        <!-- วันเกิด -->
-                        <div class="flex items-center gap-4 p-4 rounded-2xl hover:bg-bcn-base/60 transition-all border border-transparent hover:border-bcn-light/50">
-                            <div class="p-3.5 bg-bcn-light rounded-xl text-bcn-sky shadow-sm">
-                                <i data-lucide="calendar" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400 font-medium">วันเกิด</p>
-                                <p class="font-bold text-bcn-navy">[ระบุ วัน เดือน ปีเกิดของคุณ]</p>
-                            </div>
-                        </div>
-                        <!-- กรุปเลือด -->
-                        <div class="flex items-center gap-4 p-4 rounded-2xl hover:bg-bcn-base/60 transition-all border border-transparent hover:border-bcn-light/50">
-                            <div class="p-3.5 bg-bcn-light rounded-xl text-bcn-sky shadow-sm">
-                                <i data-lucide="activity-square" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400 font-medium">หมู่โลหิต / สุขภาพ</p>
-                                <p class="font-bold text-bcn-navy">[กรุ๊ปเลือด] / ร่างกายสมบูรณ์แข็งแรง</p>
-                            </div>
-                        </div>
-                        <!-- ที่อยู่ -->
-                        <div class="flex items-center gap-4 p-4 rounded-2xl hover:bg-bcn-base/60 transition-all border border-transparent hover:border-bcn-light/50">
-                            <div class="p-3.5 bg-bcn-light rounded-xl text-bcn-sky shadow-sm">
-                                <i data-lucide="map-pin" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400 font-medium">ภูมิลำเนาและที่อยู่</p>
-                                <p class="font-bold text-bcn-navy">[ระบุ จังหวัด/ที่อยู่ปัจจุบัน]</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- จุดแข็งและความพร้อมสำหรับสายวิชาชีพ -->
-                    <div class="pt-6 border-t border-slate-100">
-                        <p class="text-sm font-bold text-bcn-navy mb-4">ทักษะสำคัญและความพร้อม:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-bcn-light/70 text-bcn-navy px-4 py-2 rounded-full text-xs font-semibold border border-bcn-soft/40 shadow-sm flex items-center gap-1.5">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-bcn-sky"></i> การกู้ชีพขั้นพื้นฐาน CPR
-                            </span>
-                            <span class="bg-bcn-light/70 text-bcn-navy px-4 py-2 rounded-full text-xs font-semibold border border-bcn-soft/40 shadow-sm flex items-center gap-1.5">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-bcn-sky"></i> การปฐมพยาบาลเบื้องต้น
-                            </span>
-                            <span class="bg-bcn-light/70 text-bcn-navy px-4 py-2 rounded-full text-xs font-semibold border border-bcn-soft/40 shadow-sm flex items-center gap-1.5">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-bcn-sky"></i> ทักษะการฟังและสื่อสารอย่างใส่ใจ
-                            </span>
-                            <span class="bg-bcn-light/70 text-bcn-navy px-4 py-2 rounded-full text-xs font-semibold border border-bcn-soft/40 shadow-sm flex items-center gap-1.5">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-bcn-sky"></i> การปรับตัวและการทำงานร่วมกับผู้อื่น
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Navbar -->
 
-    <!-- EDUCATION (ประวัติการศึกษา - ลำดับเวลาสวยหรูคุมโทน) -->
-    <section id="education" class="py-24 bg-bcn-base relative">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-bcn-sky font-semibold tracking-wider uppercase text-sm">Education Journey</span>
-                <h2 class="font-title text-4xl font-bold text-bcn-navy mt-1">ประวัติการศึกษา</h2>
-                <div class="w-24 h-1.5 bg-gradient-to-r from-bcn-light via-bcn-sky to-bcn-light mx-auto mt-4 rounded-full"></div>
-            </div>
+<nav>
 
-            <!-- ไทม์ไลน์หรูหราไล่โทนสีฟ้าเข้มสว่าง -->
-            <div class="relative border-l-2 border-bcn-soft ml-4 md:ml-32 space-y-12 py-4">
-                
-                <!-- ระดับมัธยมปลาย (วิทยาศาสตร์ - คณิตศาสตร์) -->
-                <div class="relative pl-8 md:pl-12">
-                    <span class="absolute -left-[11px] top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-bcn-sky ring-4 ring-bcn-light">
-                        <span class="h-2 w-2 rounded-full bg-white"></span>
-                    </span>
-                    <div class="bg-white p-6 rounded-3xl border border-bcn-light shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="flex flex-wrap justify-between items-start gap-2">
-                            <span class="text-xs font-bold text-bcn-sky bg-bcn-light/80 px-3 py-1 rounded-full uppercase tracking-wider">ปีการศึกษา 256X - 256X</span>
-                            <span class="text-sm font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-100 flex items-center gap-1">
-                                <i data-lucide="award" class="w-4 h-4"></i> GPAX: [ใส่เกรดสะสม เช่น 3.85]
-                            </span>
-                        </div>
-                        <h3 class="font-title text-xl font-bold text-bcn-navy mt-4">ระดับมัธยมศึกษาตอนปลาย</h3>
-                        <p class="text-slate-600 font-medium">แผนการเรียน วิทยาศาสตร์ - คณิตศาสตร์</p>
-                        <p class="text-sm text-slate-400 mt-1">[พิมพ์ระบุ ชื่อโรงเรียนระดับมัธยมปลายของคุณ]</p>
-                    </div>
-                </div>
+<div class="logo">
+NATTHADA
+</div>
 
-                <!-- ระดับมัธยมศึกษาตอนต้น -->
-                <div class="relative pl-8 md:pl-12">
-                    <span class="absolute -left-[11px] top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-bcn-soft ring-4 ring-bcn-light">
-                        <span class="h-2 w-2 rounded-full bg-white"></span>
-                    </span>
-                    <div class="bg-white p-6 rounded-3xl border border-bcn-light shadow-md hover:shadow-xl transition-all duration-300">
-                        <div class="flex justify-between items-start">
-                            <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full uppercase tracking-wider">ปีการศึกษา 256X - 256X</span>
-                        </div>
-                        <h3 class="font-title text-xl font-bold text-bcn-navy mt-4">ระดับมัธยมศึกษาตอนต้น</h3>
-                        <p class="text-slate-600 font-medium">[พิมพ์ระบุ ชื่อโรงเรียนระดับมัธยมต้นของคุณ]</p>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </section>
+<ul>
 
-    <!-- ACTIVITIES & EXPERIENCE (ผลงานกิจกรรม พร้อมรูปประกอบจริงสุดสวยงาม) -->
-    <section id="activities" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-bcn-sky font-semibold tracking-wider uppercase text-sm">Activities & Community</span>
-                <h2 class="font-title text-4xl font-bold text-bcn-navy mt-1">กิจกรรมและจิตอาสาเพื่อสังคม</h2>
-                <div class="w-24 h-1.5 bg-gradient-to-r from-bcn-light via-bcn-sky to-bcn-light mx-auto mt-4 rounded-full"></div>
-            </div>
+<li>Home</li>
+<li>About</li>
+<li>Education</li>
+<li>Activities</li>
+<li>Contact</li>
 
-            <!-- กริตแสดงการ์ดกิจกรรมภาพสวยคมชัด 3 กิจกรรมเด่น -->
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- กิจกรรมที่ 1 -->
-                <div class="bg-bcn-base rounded-[2.5rem] overflow-hidden border border-bcn-light shadow-sm hover:shadow-2xl hover:shadow-bcn-light/40 transition-all duration-300 group">
-                    <div class="aspect-video overflow-hidden relative">
-                        <!-- ภาพกิจกรรม 1: จิตอาสาช่วยเหลือผู้สูงอายุ/ชุมชน -->
-                        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=1443&auto=format&fit=crop" 
-                             alt="ภาพโครงการจิตอาสาพยาบาลชุมชน" 
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <p class="text-white text-xs font-semibold">ณ สมาคมส่งเสริมสุขภาพและชุมชน</p>
-                        </div>
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <span class="bg-bcn-light text-bcn-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">จิตอาสาและสังคม</span>
-                        <h4 class="font-title text-lg font-bold text-bcn-navy">จิตอาสาคัดกรองสุขภาพผู้สูงอายุในชุมชน</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            เข้าร่วมกับบุคลากรทางการแพทย์ในการช่วยเหลือคัดกรองเบื้องต้น วัดความดันโลหิต วัดดัชนีมวลกาย และบันทึกประวัติสุขภาพเบื้องต้นให้กับผู้สูงอายุในชุมชนค่ะ
-                        </p>
-                    </div>
-                </div>
+</ul>
 
-                <!-- กิจกรรมที่ 2 -->
-                <div class="bg-bcn-base rounded-[2.5rem] overflow-hidden border border-bcn-light shadow-sm hover:shadow-2xl hover:shadow-bcn-light/40 transition-all duration-300 group">
-                    <div class="aspect-video overflow-hidden relative">
-                        <!-- ภาพกิจกรรม 2: การฝึกอบรมกู้ชีพและปฐมพยาบาล CPR -->
-                        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1470&auto=format&fit=crop" 
-                             alt="ภาพการฝึกอบรม CPR" 
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <p class="text-white text-xs font-semibold">การฝึกอบรมเสมือนจริง</p>
-                        </div>
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <span class="bg-bcn-light text-bcn-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">ทักษะวิชาชีพเพิ่มเติม</span>
-                        <h4 class="font-title text-lg font-bold text-bcn-navy">การอบรมกู้ฟื้นคืนชีพขั้นพื้นฐาน CPR & AED</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            ผ่านหลักสูตรเรียนรู้เชิงปฏิบัติการช่วยเหลือภาวะฉุกเฉินและการกู้ฟื้นคืนชีพ (CPR) อย่างมืออาชีพจากสถาบันที่ได้รับการรับรอง สามารถตอบสนองได้อย่างรวดเร็ว
-                        </p>
-                    </div>
-                </div>
+</nav>
 
-                <!-- กิจกรรมที่ 3 -->
-                <div class="bg-bcn-base rounded-[2.5rem] overflow-hidden border border-bcn-light shadow-sm hover:shadow-2xl hover:shadow-bcn-light/40 transition-all duration-300 group">
-                    <div class="aspect-video overflow-hidden relative">
-                        <!-- ภาพกิจกรรม 3: การรณรงค์ให้ความรู้เรื่องสุขอนามัยกับเยาวชน -->
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1504&auto=format&fit=crop" 
-                             alt="ภาพกิจกรรมเผยแพร่ความรู้ความสะอาดในเด็ก" 
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                            <p class="text-white text-xs font-semibold">โรงเรียนเครือข่ายจิตอาสา</p>
-                        </div>
-                    </div>
-                    <div class="p-6 space-y-3">
-                        <span class="bg-bcn-light text-bcn-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">ความเป็นผู้นำ</span>
-                        <h4 class="font-title text-lg font-bold text-bcn-navy">โครงการรณรงค์รักษาสุขอนามัยล้างมือ 7 ขั้นตอน</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            เป็นผู้นำจัดนิทรรศการความรู้เกี่ยวกับการดูแลรักษาสุขภาพเบื้องต้น การสอนน้องๆ ล้างมืออย่างสะอาดเพื่อสกัดกั้นเชื้อโรค พร้อมทั้งแจกชุดดูแลความสะอาดในโรงเรียน
-                        </p>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </section>
 
-    <!-- CERTIFICATES (หน้าแสดงเกียรติบัตรที่น่าประทับใจ) -->
-    <section id="certificates" class="py-24 bg-bcn-base">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-bcn-sky font-semibold tracking-wider uppercase text-sm">Credentials & Certifications</span>
-                <h2 class="font-title text-4xl font-bold text-bcn-navy mt-1">เกียรติบัตรและความดีความชอบ</h2>
-                <div class="w-24 h-1.5 bg-gradient-to-r from-bcn-light via-bcn-sky to-bcn-light mx-auto mt-4 rounded-full"></div>
-            </div>
+<!-- Hero Section -->
 
-            <!-- แสดงเกียรติบัตรเด่นแบบพรีเมียม 2 ใบเคียงคู่กัน -->
-            <div class="grid md:grid-cols-2 gap-12">
-                
-                <!-- ใบที่ 1 -->
-                <div class="bg-white p-6 rounded-[3rem] shadow-md hover:shadow-xl transition-all duration-300 border border-bcn-light">
-                    <div class="aspect-[1.414/1] bg-bcn-light rounded-2xl overflow-hidden border border-slate-200 relative group">
-                        <!-- ภาพเกียรติบัตรหรูหราคมชัด -->
-                        <img src="https://images.unsplash.com/photo-1589330694653-ded6df53f7ee?q=80&w=1470&auto=format&fit=crop" 
-                             alt="เกียรติบัตรผู้บำเพ็ญประโยชน์ดีเด่น" 
-                             class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-bcn-navy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="bg-white text-bcn-navy font-semibold px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 shadow">
-                                <i data-lucide="zoom-in" class="w-4 h-4"></i> ขยายดูรูปภาพ
-                            </span>
-                        </div>
-                    </div>
-                    <div class="mt-5 text-center space-y-1">
-                        <h4 class="font-title font-bold text-bcn-navy text-lg">[เกียรติบัตรผู้ผ่านการอบรมการกู้ชีพ CPR]</h4>
-                        <p class="text-xs text-slate-500">[สถาบันการแพทย์ฉุกเฉินแห่งประเทศไทย หรือระบุตามเกียรติบัตรคุณ]</p>
-                    </div>
-                </div>
+<section class="hero">
 
-                <!-- ใบที่ 2 -->
-                <div class="bg-white p-6 rounded-[3rem] shadow-md hover:shadow-xl transition-all duration-300 border border-bcn-light">
-                    <div class="aspect-[1.414/1] bg-bcn-light rounded-2xl overflow-hidden border border-slate-200 relative group">
-                        <!-- ภาพเกียรติบัตรใบที่สอง -->
-                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1470&auto=format&fit=crop" 
-                             alt="เกียรติบัตรจิตอาสายอดเยี่ยม" 
-                             class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-bcn-navy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="bg-white text-bcn-navy font-semibold px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 shadow">
-                                <i data-lucide="zoom-in" class="w-4 h-4"></i> ขยายดูรูปภาพ
-                            </span>
-                        </div>
-                    </div>
-                    <div class="mt-5 text-center space-y-1">
-                        <h4 class="font-title font-bold text-bcn-navy text-lg">[เกียรติบัตรนักเรียนบำเพ็ญประโยชน์ด้านอาสาพยาบาล]</h4>
-                        <p class="text-xs text-slate-500">[สภาเยาวชนสาธารณสุขจังหวัด หรือโรงเรียนระดับมัธยม]</p>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </section>
+<div class="hero-text">
 
-    <!-- CONTACT (ช่องทางการติดต่อเพื่ออำนวยความสะดวกในการติดต่อกลับ) -->
-    <section id="contact" class="bg-gradient-to-tr from-bcn-navy to-bcn-slate text-white py-24 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-5 pointer-events-none">
-            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#ffffff" d="M0,64L120,96C240,128,480,192,720,213.3C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
-            </svg>
-        </div>
 
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-bcn-soft font-semibold tracking-wider uppercase text-sm">Contact Information</span>
-                <h2 class="font-title text-4xl font-bold mt-1">ยินดีเข้าพบปะพูดคุยและสัมภาษณ์ค่ะ</h2>
-                <div class="w-24 h-1.5 bg-bcn-medium mx-auto mt-4 rounded-full"></div>
-            </div>
+<p class="welcome">
+PORTFOLIO 2026
+</p>
 
-            <div class="grid md:grid-cols-12 gap-12 items-center">
-                <!-- ฝั่งซ้าย: ความในใจขอบพระคุณคณะกรรมการ -->
-                <div class="md:col-span-6 space-y-6">
-                    <h3 class="font-title text-3xl font-bold leading-relaxed">
-                        ขอขอบพระคุณ <br><span class="text-bcn-medium">คณะกรรมการผู้คัดเลือก</span> ทุกท่านค่ะ
-                    </h3>
-                    <p class="text-bcn-light/80 leading-relaxed text-base">
-                        หนูหวังอย่างยิ่งว่าจะได้รับการสนับสนุนจากทางสถาบัน วิทยาลัยพยาบาลบรมราชชนนี เพื่อเรียนรู้ หล่อหลอมพฤติกรรม ตลอดจนพัฒนาฝีมือเพื่อช่วยแบ่งเบาภาระงานด้านสุขภาพและสาธารณสุขของประเทศต่อไปค่ะ
-                    </p>
-                    <div class="pt-4 flex items-center gap-3">
-                        <span class="flex h-3 w-3 relative">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                        </span>
-                        <p class="text-sm text-bcn-soft font-semibold">พร้อมสำหรับการสัมภาษณ์และตรวจสอบเอกสาร</p>
-                    </div>
-                </div>
 
-                <!-- ฝั่งขวา: รายละเอียดการติดต่อพร้อมใช้แก้วมอร์ฟิสซึม -->
-                <div class="md:col-span-6 bg-white/5 p-8 rounded-[2.5rem] border border-white/10 space-y-6 backdrop-blur-md">
-                    <h4 class="font-title text-xl font-bold text-bcn-soft">ช่องทางสื่อสารรวดเร็ว:</h4>
-                    
-                    <div class="space-y-5">
-                        <!-- เบอร์โทร -->
-                        <div class="flex items-center gap-4 hover:translate-x-1.5 transition-transform duration-300">
-                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-bcn-soft border border-white/10 shadow-inner">
-                                <i data-lucide="phone" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-bcn-light/60 font-medium">เบอร์โทรศัพท์ติดต่อ</p>
-                                <p class="font-bold text-lg text-white">[0XX-XXX-XXXX]</p>
-                            </div>
-                        </div>
+<h1>
+นางสาว
+<br>
+<span>ณัฐดา สุขพิทักษ์</span>
+</h1>
 
-                        <!-- อีเมล -->
-                        <div class="flex items-center gap-4 hover:translate-x-1.5 transition-transform duration-300">
-                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-bcn-soft border border-white/10 shadow-inner">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-bcn-light/60 font-medium">ที่อยู่อีเมลหลัก</p>
-                                <p class="font-bold text-lg text-white">nattada.suk@email.com</p>
-                            </div>
-                        </div>
 
-                        <!-- แพลตฟอร์มโซเชียลมีเดีย -->
-                        <div class="flex items-center gap-4 hover:translate-x-1.5 transition-transform duration-300">
-                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-bcn-soft border border-white/10 shadow-inner">
-                                <i data-lucide="message-circle" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-bcn-light/60 font-medium">LINE ID / Facebook</p>
-                                <p class="font-bold text-lg text-white">Nattada.S / [ใส่ไอดีติดต่อ]</p>
-                            </div>
-                        </div>
-                    </div>
+<h3>
+โรงเรียนกระทุ่มแบน
+<br>
+"วิเศษสมุทคุณ"
+</h3>
 
-                    <!-- ลิขสิทธิ์ความปลอดภัย -->
-                    <p class="text-[11px] text-slate-400 pt-6 border-t border-white/10">
-                        © 2026 ณัฐดา สุขพิทักษ์ • ออกแบบเฉพาะเพื่อการรับเข้าสมัครสถาบันวิทยาลัยพยาบาลบรมราชชนนี
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- รันเพื่อให้ไอคอน Lucide แสดงผลเต็มประสิทธิภาพ -->
-    <script>
-        lucide.createIcons();
-    </script>
+<p class="detail">
+
+นักเรียนผู้มีความสนใจด้าน
+<br>
+วิทยาศาสตร์สุขภาพ เทคโนโลยี
+และการพัฒนาตนเอง
+
+</p>
+
+
+<div class="button">
+
+<a href="#">
+VIEW PORTFOLIO
+</a>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="profile-card">
+
+
+<div class="glow"></div>
+
+
+<div class="photo">
+
+
+<img src="profile.png" alt="Natthada">
+
+
+</div>
+
+
+
+<div class="card-info">
+
+
+<h2>
+NATTHADA
+</h2>
+
+<p>
+Student Portfolio
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- Bottom University Card -->
+
+<div class="university">
+
+
+<div>
+
+<h3>
+🎓 UNIVERSITY GOAL
+</h3>
+
+<p>
+สถาบันพระบรมราชชนก
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+🏫 SCHOOL
+</h3>
+
+<p>
+กระทุ่มแบน "วิเศษสมุทคุณ"
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+✨ YEAR
+</h3>
+
+<p>
+2026
+</p>
+
+</div>
+
+
+</div>
+
+
+
 </body>
+
 </html>
