@@ -1,272 +1,276 @@
-<!DOCTYPE html>
-<html lang="th">
+/* ====================================
+   NATTHADA PORTFOLIO 2026
+   PREMIUM JAVASCRIPT EFFECT
+==================================== */
 
-<head>
 
-<meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+// ================================
+// PAGE LOAD EFFECT
+// ================================
 
 
-<title>
-About | ณัฐดา สุขพิทักษ์
-</title>
+window.addEventListener("load",()=>{
 
 
-<link rel="stylesheet" href="style.css">
+document.body.classList.add("show");
 
 
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet">
+});
 
 
-</head>
 
 
 
-<body>
 
 
+// ================================
+// NAVBAR GLASS EFFECT
+// ================================
 
-<header>
 
-<div class="logo">
-NATTHADA
-</div>
+window.addEventListener("scroll",()=>{
 
 
+const header =
+document.querySelector("header");
 
-<nav>
 
-<a href="index.html">
-Home
-</a>
 
+if(window.scrollY > 50){
 
-<a href="about.html">
-About
-</a>
 
+header.style.background =
+"rgba(255,255,255,0.12)";
 
-<a href="education.html">
-Education
-</a>
 
+header.style.backdropFilter =
+"blur(20px)";
 
-<a href="activities.html">
-Activities
-</a>
 
+header.style.borderRadius =
+"25px";
 
-<a href="certificates.html">
-Certificates
-</a>
 
+header.style.padding =
+"15px 30px";
 
-<a href="projects.html">
-Projects
-</a>
 
+}
 
-</nav>
 
+else{
 
-</header>
 
+header.style.background =
+"transparent";
 
 
+header.style.backdropFilter =
+"none";
 
 
+}
 
 
-<section class="about-page">
 
+});
 
 
-<div class="title">
 
 
-<p>
-ABOUT ME
-</p>
 
 
-<h1>
-ประวัติส่วนตัว
-</h1>
 
 
-</div>
+// ================================
+// PROFILE 3D MOUSE EFFECT
+// ================================
 
 
+const profile =
+document.querySelector(".profile-card");
 
 
 
+if(profile){
 
-<div class="about-card">
 
+document.addEventListener(
+"mousemove",
+(e)=>{
 
 
-<div class="about-image">
+let x =
+(e.clientX / window.innerWidth -0.5)*20;
 
 
-<img src="images/profile.png">
+let y =
+(e.clientY / window.innerHeight -0.5)*20;
 
 
-</div>
 
+profile.style.transform =
 
+`
+rotateY(${x}deg)
+rotateX(${-y}deg)
+`;
 
 
 
-<div class="about-info">
+});
 
 
-<h2>
-นางสาว ณัฐดา สุขพิทักษ์
-</h2>
+}
 
 
 
-<p>
 
-นักเรียนระดับชั้นมัธยมศึกษาตอนปลาย
 
-<br>
 
-โรงเรียนกระทุ่มแบน "วิเศษสมุทคุณ"
 
-</p>
+// ================================
+// SCROLL REVEAL
+// ================================
 
 
+const reveal =
+document.querySelectorAll(
+".card, .menu-card div, .project-card"
+);
 
-<div class="info-list">
 
 
-<div>
+function showReveal(){
 
-<span>
-🎂
-</span>
 
-วันเกิด
+reveal.forEach(item=>{
 
-<br>
 
-<strong>
-ใส่วันเดือนปีเกิด
-</strong>
+let top =
+item.getBoundingClientRect().top;
 
 
-</div>
+let screen =
+window.innerHeight -100;
 
 
 
+if(top < screen){
 
-<div>
 
-<span>
-🏫
-</span>
+item.classList.add("active");
 
-สถานศึกษา
 
-<br>
+}
 
-<strong>
-โรงเรียนกระทุ่มแบน
-"วิเศษสมุทคุณ"
-</strong>
 
 
-</div>
+});
 
 
+}
 
 
 
-<div>
+window.addEventListener(
+"scroll",
+showReveal
+);
 
-<span>
-🎓
-</span>
 
-เป้าหมาย
 
-<br>
+showReveal();
 
-<strong>
-สถาบันพระบรมราชชนก
-</strong>
 
 
-</div>
 
 
 
 
-<div>
 
-<span>
-💙
-</span>
+// ================================
+// IMAGE CLICK ZOOM
+// ================================
 
-ความสนใจ
 
-<br>
+const images =
+document.querySelectorAll(
+"img"
+);
 
-<strong>
-วิทยาศาสตร์สุขภาพ
-และเทคโนโลยี
-</strong>
 
 
-</div>
+images.forEach(img=>{
 
 
-</div>
+img.addEventListener(
+"click",
+()=>{
 
 
-</div>
+img.classList.toggle(
+"zoom"
+);
 
 
-</div>
+});
 
 
+});
 
 
 
-<section class="quote">
 
 
-<h2>
-"My Passion"
-</h2>
 
 
-<p>
+// ================================
+// FLOATING LIGHT
+// ================================
 
-มุ่งมั่นพัฒนาความรู้
-ทักษะ และประสบการณ์
 
-เพื่อเติบโตในสายวิชาชีพ
-ด้านสุขภาพ
+function createLight(){
 
-</p>
 
+const light =
+document.createElement("div");
 
-</section>
 
+light.className="light";
 
 
 
+light.style.left =
+Math.random()*100+"%";
 
-</section>
 
 
+light.style.animationDuration =
+(5+Math.random()*5)+"s";
 
 
 
+document.body.appendChild(light);
 
-</body>
 
-</html>
+
+setTimeout(()=>{
+
+
+light.remove();
+
+
+},10000);
+
+
+
+}
+
+
+
+setInterval(
+createLight,
+800
+);
