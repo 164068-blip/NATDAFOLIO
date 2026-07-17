@@ -1,83 +1,171 @@
-// ================================
-// NATTHADA PORTFOLIO SCRIPT
-// Ocean Animation
-// ================================
+/* =====================================
+   NATTHADA PORTFOLIO
+   SKY BLUE EFFECT SCRIPT
+===================================== */
 
 
 
-// Scroll Reveal Animation
-
-const sections = document.querySelectorAll("section");
-
-
-const reveal = () => {
+// =========================
+// SCROLL REVEAL
+// =========================
 
 
-    sections.forEach(section => {
-
-
-        const top = section.getBoundingClientRect().top;
-
-
-        const windowHeight = window.innerHeight;
+const items = document.querySelectorAll(
+".card, .hero-box, .profile"
+);
 
 
 
-        if(top < windowHeight - 100){
+function showOnScroll(){
 
 
-            section.style.opacity = "1";
-
-            section.style.transform = "translateY(0)";
+items.forEach(item=>{
 
 
-        }
+let position =
+item.getBoundingClientRect().top;
 
 
-    });
+let screen =
+window.innerHeight - 120;
 
 
-};
+
+if(position < screen){
+
+
+item.classList.add("show");
+
+
+}
+
+
+
+});
+
+
+}
 
 
 
 window.addEventListener(
 "scroll",
-reveal
+showOnScroll
 );
 
 
+showOnScroll();
 
 
 
-// ตั้งค่าเริ่มต้น Animation
 
 
-sections.forEach(section=>{
 
 
-    section.style.opacity="0";
+// =========================
+// MOUSE LIGHT EFFECT
+// =========================
 
 
-    section.style.transform="translateY(60px)";
+const glow =
+document.querySelector(".glow2");
 
 
-    section.style.transition=
-    "all 1s ease";
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+
+glow.style.left =
+e.clientX - 150 + "px";
+
+
+glow.style.top =
+e.clientY - 150 + "px";
+
 
 
 });
 
 
 
-reveal();
+
+
+
+
+// =========================
+// 3D CARD EFFECT
+// =========================
+
+
+const cards =
+document.querySelectorAll(".card");
+
+
+
+cards.forEach(card=>{
+
+
+card.addEventListener(
+"mousemove",
+(e)=>{
+
+
+let x =
+(e.offsetX -
+card.offsetWidth/2)
+/20;
+
+
+let y =
+(e.offsetY -
+card.offsetHeight/2)
+/20;
+
+
+
+card.style.transform =
+
+`
+perspective(700px)
+rotateX(${-y}deg)
+rotateY(${x}deg)
+translateY(-10px)
+`;
+
+
+
+});
+
+
+
+
+
+card.addEventListener(
+"mouseleave",
+()=>{
+
+
+card.style.transform =
+"translateY(0)";
+
+
+});
+
+
+});
 
 
 
 
 
 
-// Navbar เปลี่ยนเมื่อ Scroll
+
+
+// =========================
+// NAVBAR GLASS EFFECT
+// =========================
 
 
 const header =
@@ -90,71 +178,40 @@ window.addEventListener(
 ()=>{
 
 
-    if(window.scrollY > 50){
+if(window.scrollY > 50){
 
 
-        header.style.background =
-        "rgba(255,255,255,0.12)";
+header.style.background =
+"rgba(255,255,255,.55)";
 
 
-        header.style.backdropFilter =
-        "blur(15px)";
+header.style.backdropFilter =
+"blur(20px)";
 
 
-        header.style.borderRadius =
-        "20px";
+header.style.borderRadius =
+"25px";
 
 
-        header.style.padding =
-        "15px 30px";
+header.style.boxShadow =
+"0 0 25px rgba(0,180,255,.3)";
 
 
-    }
+}
 
 
-    else{
+else{
 
 
-        header.style.background =
-        "transparent";
+header.style.background =
+"transparent";
 
 
-        header.style.backdropFilter =
-        "none";
+header.style.boxShadow =
+"none";
 
 
-    }
-
-
-
-});
-
-
-
-
-
-
-
-// Mouse Glow Effect
-
-
-const light =
-document.querySelector(".light");
-
-
-
-document.addEventListener(
-"mousemove",
-(e)=>{
-
-
-    light.style.left =
-    e.clientX - 250 + "px";
-
-
-    light.style.top =
-    e.clientY - 250 + "px";
-
+}
 
 
 });
@@ -164,97 +221,32 @@ document.addEventListener(
 
 
 
-// Image Hover 3D Effect
+// =========================
+// PROFILE FLOAT
+// =========================
 
 
 const profile =
-document.querySelector(".profile-box");
+document.querySelector(".profile");
 
 
 
-profile.addEventListener(
-"mousemove",
-(e)=>{
+let move = 0;
 
 
-let x =
-(e.offsetX -
-profile.offsetWidth/2)
-/20;
+
+setInterval(()=>{
 
 
-let y =
-(e.offsetY -
-profile.offsetHeight/2)
-/20;
-
+move += 0.02;
 
 
 profile.style.transform =
+
 `
-rotateY(${x}deg)
-rotateX(${-y}deg)
+translateY(${Math.sin(move)*8}px)
 `;
 
 
 
-});
-
-
-
-
-
-profile.addEventListener(
-"mouseleave",
-()=>{
-
-
-profile.style.transform =
-"rotateY(0deg) rotateX(0deg)";
-
-
-});
-
-
-
-
-
-
-
-// Portfolio Card Animation
-
-
-const cards =
-document.querySelectorAll(".project");
-
-
-
-cards.forEach(card=>{
-
-
-card.addEventListener(
-"mouseenter",
-()=>{
-
-
-card.style.transform =
-"translateY(-15px) scale(1.03)";
-
-
-});
-
-
-
-card.addEventListener(
-"mouseleave",
-()=>{
-
-
-card.style.transform =
-"translateY(0) scale(1)";
-
-
-});
-
-
-});
+},30);
