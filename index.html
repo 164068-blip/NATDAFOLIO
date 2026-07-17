@@ -1,230 +1,333 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>My Premium Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
-
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome สำหรับ Icons สวยๆ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+        /* ปรับแต่งความสมูทของ Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-gradient-to-tr from-slate-50 via-gray-100 to-indigo-50 text-slate-800 min-h-screen antialiased">
 
-<header>
+    <!-- HEADER & NAVIGATION (เมนูโปร่งแสงล้ำสมัย) -->
+    <header class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-md border-b border-white/50 shadow-sm z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">
+                <i class="fa-solid fa-graduation-cap mr-2"></i>MY PORTFOLIO
+            </div>
+            <nav class="hidden md:flex space-x-8 font-medium text-slate-600">
+                <a href="#home" class="hover:text-indigo-600 transition-colors duration-300">หน้าหลัก</a>
+                <a href="#about" class="hover:text-indigo-600 transition-colors duration-300">ประวัติส่วนตัว</a>
+                <a href="#education" class="hover:text-indigo-600 transition-colors duration-300">การศึกษา</a>
+                <a href="#portfolio" class="hover:text-indigo-600 transition-colors duration-300">ผลงาน</a>
+                <a href="#contact" class="hover:text-indigo-600 transition-colors duration-300">ติดต่อ</a>
+            </nav>
+            <!-- Mobile Menu Icon (ตกแต่งเผื่อไว้สำหรับอนาคต) -->
+            <div class="md:hidden text-slate-600 text-xl cursor-pointer">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
 
-    <div class="logo">
-        My Portfolio
+    <!-- HERO SECTION (หน้าแรกเด่นสะดุดตา) -->
+    <section class="min-h-screen flex items-center justify-center pt-24 pb-12 px-6" id="home">
+        <div class="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="space-y-6 text-center md:text-left order-2 md:order-1">
+                <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
+                    Welcome To My Space
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                    [ ชื่อ - นามสกุล ของคุณ ]
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-600">
+                    PORTFOLIO
+                </h2>
+                <p class="text-lg text-slate-600 max-w-md mx-auto md:mx-0 font-light">
+                    แฟ้มสะสมผลงานอิเล็กทรอนิกส์ เพื่อการศึกษาต่อในระดับอุดมศึกษา
+                </p>
+                <div class="pt-4">
+                    <a href="#portfolio" class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-medium px-8 py-3.5 rounded-xl shadow-lg shadow-indigo-200 hover:shadow-xl hover:shadow-indigo-300 hover:-translate-y-0.5 transition-all duration-300">
+                        ชมผลงานทั้งหมด <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex justify-center order-1 md:order-2">
+                <div class="relative group">
+                    <!-- เอฟเฟกต์วงแสงเรืองแสงหลังรูป -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-[2rem] blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <!-- กรอบรูปภาพ -->
+                    <div class="relative w-72 h-96 md:w-80 md:h-[26rem] bg-white p-3 rounded-[2rem] shadow-xl">
+                        <img src="images/profile.jpg" alt="Profile" class="w-full h-full object-cover rounded-[1.5rem] bg-slate-100" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500'">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT ME SECTION (ประวัติส่วนตัวแบบ Glassmorphism) -->
+    <section class="py-24 px-6 max-w-4xl mx-auto" id="about">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 tracking-wide inline-block relative pb-3">
+                ABOUT ME
+                <span class="absolute bottom-0 left-1/4 right-1/4 h-1 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full"></span>
+            </h2>
+        </div>
+        
+        <div class="bg-white/60 backdrop-blur-xl border border-white/80 rounded-3xl p-8 md:p-10 shadow-xl shadow-slate-100/50 space-y-6">
+            <div class="grid sm:grid-cols-2 gap-6 text-base md:text-lg">
+                <div class="flex items-center gap-4 p-4 bg-white/40 rounded-2xl border border-white/40">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600"><i class="fa-solid fa-user"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-medium">ชื่อ-นามสกุล</p>
+                        <p class="font-semibold text-slate-700">______________________</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 p-4 bg-white/40 rounded-2xl border border-white/40">
+                    <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center text-violet-600"><i class="fa-solid fa-school"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-medium">โรงเรียน</p>
+                        <p class="font-semibold text-slate-700">______________________</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 p-4 bg-white/40 rounded-2xl border border-white/40">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600"><i class="fa-solid fa-book-open"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-medium">แผนการเรียน</p>
+                        <p class="font-semibold text-slate-700">______________________</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 p-4 bg-white/40 rounded-2xl border border-white/40">
+                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600"><i class="fa-solid fa-star"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-medium">ความสามารถพิเศษ</p>
+                        <p class="font-semibold text-slate-700">______________________</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-5 bg-gradient-to-r from-indigo-50/50 to-violet-50/50 rounded-2xl border border-indigo-100/50 mt-4">
+                <p class="text-xs text-indigo-600 font-bold uppercase tracking-wider mb-1"><i class="fa-solid fa-bullseye mr-1"></i> เป้าหมายในอนาคต</p>
+                <p class="text-slate-700 font-medium leading-relaxed">____________________________________________________________</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION (การศึกษาเรียงไทม์ไลน์สวยงาม) -->
+    <section class="py-24 px-6 max-w-4xl mx-auto" id="education">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 tracking-wide inline-block relative pb-3">
+                EDUCATION
+                <span class="absolute bottom-0 left-1/4 right-1/4 h-1 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full"></span>
+            </h2>
+        </div>
+
+        <div class="relative border-l-2 border-indigo-200 ml-4 md:ml-6 space-y-10 py-2">
+            <!-- ประถม -->
+            <div class="relative pl-8 md:pl-10 group">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 bg-white border-4 border-indigo-600 rounded-full group-hover:bg-indigo-600 transition-colors duration-300"></div>
+                <div class="bg-white/60 backdrop-blur-xl border border-white/80 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                    <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">ระดับประถมศึกษา</span>
+                    <p class="text-lg font-semibold text-slate-800 mt-2">______________________________________</p>
+                </div>
+            </div>
+            <!-- มัธยมต้น -->
+            <div class="relative pl-8 md:pl-10 group">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 bg-white border-4 border-indigo-600 rounded-full group-hover:bg-indigo-600 transition-colors duration-300"></div>
+                <div class="bg-white/60 backdrop-blur-xl border border-white/80 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                    <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">ระดับมัธยมศึกษาตอนต้น</span>
+                    <p class="text-lg font-semibold text-slate-800 mt-2">______________________________________</p>
+                </div>
+            </div>
+            <!-- มัธยมปลาย -->
+            <div class="relative pl-8 md:pl-10 group">
+                <div class="absolute -left-[9px] top-1.5 w-4 h-4 bg-white border-4 border-violet-600 rounded-full group-hover:bg-violet-600 transition-colors duration-300"></div>
+                <div class="bg-white/60 backdrop-blur-xl border border-white/80 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                    <span class="text-xs font-bold text-violet-600 bg-violet-50 px-3 py-1 rounded-full">ระดับมัธยมศึกษาตอนปลาย</span>
+                    <p class="text-lg font-semibold text-slate-800 mt-2">______________________________________</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION (แกลเลอรีผลงานแบบ Grid ทันสมัย) -->
+    <section class="py-24 px-6 max-w-7xl mx-auto" id="portfolio">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 tracking-wide inline-block relative pb-3">
+                PORTFOLIO PAGES
+                <span class="absolute bottom-0 left-1/4 right-1/4 h-1 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full"></span>
+            </h2>
+            <p class="text-sm text-slate-500 mt-2">คลิกที่รูปภาพเพื่อเปิดหน้าต่างขยายใหญ่แบบเต็มจอ</p>
+        </div>
+
+        <!-- Responsive Grid Layout -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            
+            <!-- Generate บล็อกรูปภาพทั้ง 10 หน้าด้วยโครงสร้างที่สวยงามขึ้น -->
+            <script>
+                for (let i = 1; i <= 10; i++) {
+                    document.write(`
+                        <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer" onclick="openImage('images/page${i}.jpg')">
+                            <div class="aspect-[3/4] bg-slate-100 overflow-hidden relative">
+                                <img src="images/page${i}.jpg" alt="Portfolio หน้า ${i}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=400'">
+                                <!-- แถบ Overlay ตอนเมาส์ชี้ -->
+                                <div class="absolute inset-0 bg-indigo-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="bg-white/90 text-indigo-900 text-xs font-semibold px-4 py-2 rounded-xl shadow-md"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i> ขยายรูป</span>
+                                </div>
+                            </div>
+                            <div class="p-4 text-center border-t border-slate-50 bg-white">
+                                <p class="text-sm font-medium text-slate-700 group-hover:text-indigo-600 transition-colors">Portfolio หน้า ${i}</p>
+                            </div>
+                        </div>
+                    `);
+                }
+            </script>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (ช่องทางติดต่อแบบโมเดิร์นไอคอน) -->
+    <section class="py-24 px-6 max-w-4xl mx-auto" id="contact">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 tracking-wide inline-block relative pb-3">
+                CONTACT ME
+                <span class="absolute bottom-0 left-1/4 right-1/4 h-1 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full"></span>
+            </h2>
+        </div>
+
+        <div class="bg-slate-900 text-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <!-- วงกลมแสง Background ตกแต่งภายในกล่องดำ -->
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-indigo-600/30 rounded-full blur-2xl"></div>
+            <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-violet-600/30 rounded-full blur-2xl"></div>
+
+            <div class="relative grid sm:grid-cols-2 gap-6">
+                
+                <a href="#" class="flex items-center gap-4 p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 transition-all group">
+                    <div class="w-12 h-12 bg-rose-500/20 text-rose-400 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-400">Email</p>
+                        <p class="font-medium text-slate-200">______________________</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center gap-4 p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 transition-all group">
+                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform"><i class="fa-brands fa-facebook"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-400">Facebook</p>
+                        <p class="font-medium text-slate-200">______________________</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center gap-4 p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 transition-all group">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-amber-500/20 to-pink-500/20 text-pink-400 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform"><i class="fa-brands fa-instagram"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-400">Instagram</p>
+                        <p class="font-medium text-slate-200">______________________</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center gap-4 p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 transition-all group">
+                    <div class="w-12 h-12 bg-slate-500/20 text-slate-300 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform"><i class="fa-brands fa-github"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-400">GitHub</p>
+                        <p class="font-medium text-slate-200">______________________</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PREMIUM IMAGE POPUP MODAL (หน้าต่างซูมรูปภาพหรูหราแบบมืด) -->
+    <div id="popup" class="fixed inset-0 bg-black/90 backdrop-blur-md hidden z-[100] flex-col items-center justify-center p-4 transition-all duration-300 opacity-0">
+        <!-- ปุ่มปิดมุมขวาบน -->
+        <button onclick="closeImage()" class="absolute top-6 right-6 text-white/70 hover:text-white text-3xl p-2 bg-white/10 hover:bg-white/20 rounded-full w-12 h-12 flex items-center justify-center transition-all">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <!-- ตัวรูปภาพที่ขยาย -->
+        <div class="max-w-4xl max-h-[85vh] overflow-hidden rounded-xl shadow-2xl border border-white/10">
+            <img id="popup-img" class="w-full h-full object-contain max-h-[85vh]" src="" alt="Portfolio Expanded">
+        </div>
     </div>
 
-    <nav>
-
-        <a href="#home">หน้าหลัก</a>
-
-        <a href="#about">ประวัติ</a>
-
-        <a href="#education">การศึกษา</a>
-
-        <a href="#portfolio">ผลงาน</a>
-
-        <a href="#contact">ติดต่อ</a>
-
-    </nav>
-
-</header>
-
-<!-- Hero -->
-
-<section class="hero" id="home">
-
-<div class="hero-text">
-
-<h1>________________________</h1>
-
-<h2>PORTFOLIO</h2>
-
-<p>
-
-แฟ้มสะสมผลงานเพื่อการศึกษาต่อ
-
-</p>
-
-<a href="#portfolio" class="btn">
-
-ชมผลงาน
-
-</a>
-
-</div>
-
-<div class="hero-image">
-
-<img src="images/profile.jpg" alt="Profile">
-
-</div>
-
-</section>
-
-<!-- About -->
-
-<section id="about">
-
-<h2 class="title">
-
-ABOUT ME
-
-</h2>
-
-<div class="glass">
-
-<p><b>ชื่อ :</b> ______________________</p>
-
-<p><b>โรงเรียน :</b> ______________________</p>
-
-<p><b>แผนการเรียน :</b> ______________________</p>
-
-<p><b>ความสามารถ :</b> ______________________</p>
-
-<p><b>เป้าหมาย :</b> ______________________</p>
-
-</div>
-
-</section>
-
-<!-- Education -->
-
-<section id="education">
-
-<h2 class="title">
-
-EDUCATION
-
-</h2>
-
-<div class="glass">
-
-<p>ประถมศึกษา : ______________________</p>
-
-<p>มัธยมศึกษาตอนต้น : ______________________</p>
-
-<p>มัธยมศึกษาตอนปลาย : ______________________</p>
-
-</div>
-
-</section>
-
-<!-- Portfolio -->
-
-<section id="portfolio">
-
-<h2 class="title">
-
-PORTFOLIO
-
-</h2>
-
-<div class="gallery">
-
-<div class="card">
-<img src="images/page1.jpg" onclick="openImage(this.src)">
-<p>Portfolio หน้า 1</p>
-</div>
-
-<div class="card">
-<img src="images/page2.jpg" onclick="openImage(this.src)">
-<p>Portfolio หน้า 2</p>
-</div>
-
-<div class="card">
-<img src="images/page3.jpg" onclick="openImage(this.src)">
-<p>Portfolio หน้า 3</p>
-</div>
-
-<div class="card">
-<img src="images/page4.jpg" onclick="openImage(this.src)">
-<p>Portfolio หน้า 4</p>
-</div>
-
-<div class="card">
-<img src="images/page5.jpg" onclick="openImage(this.src)">
-<p>Portfolio หน้า 5</p>
-</div>
-
-<div class="card">
-<img src="images/page6.jpg" onclick="openImage(this.src)">
-<p>Portfolio หน้า 6</p>
-</div>
-
-<div class="card">
-<img src="images/page7.jpg" onclick="openImage(this.src)">
-<p>Portfolio หน้า 7</p>
-</div>
-
-<div class="card">
-<img src="images/page8.jpg" onclick="openImage(this.src)">
-<p>Portfolio หน้า 8</p>
-</div>
-
-<div class="card">
-<img src="images/page9.jpg" onclick="openImage(this.src)">
-<p>Portfolio หน้า 9</p>
-</div>
-
-<div class="card">
-<img src="images/page10.jpg" onclick="openImage(this.src)">
-<p>Portfolio หน้า 10</p>
-</div>
-
-
-
-</div>
-
-</section>
-
-<!-- Contact -->
-
-<section id="contact">
-
-<h2 class="title">
-
-CONTACT
-
-</h2>
-
-<div class="glass">
-
-<p>Email : ______________________</p>
-
-<p>Facebook : ______________________</p>
-
-<p>Instagram : ______________________</p>
-
-<p>GitHub : ______________________</p>
-
-</div>
-
-</section>
-
-<!-- Popup -->
-
-<div id="popup">
-
-<span onclick="closeImage()">&times;</span>
-
-<img id="popup-img">
-
-</div>
-
-<footer>
-
-© 2026 My Portfolio
-
-</footer>
-
-<script src="script.js"></script>
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-100 py-8 text-center text-sm text-slate-400 font-light">
+        &copy; 2026 My Portfolio. All Rights Reserved.
+    </footer>
+
+    <!-- JAVASCRIPT FOR IMAGE POPUP MODAL -->
+    <script>
+        function openImage(src) {
+            const popup = document.getElementById('popup');
+            const popupImg = document.getElementById('popup-img');
+            
+            popupImg.src = src;
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
+            
+            // เพิ่มดีเลย์เล็กน้อยเพื่อให้ CSS Transition ของ Opacity ทำงานแบบนุ่มนวล
+            setTimeout(() => {
+                popup.classList.remove('opacity-0');
+            }, 10);
+
+            // บล็อกการ Scroll หน้าเว็บหลักเมื่อเปิดป๊อปอัป
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeImage() {
+            const popup = document.getElementById('popup');
+            popup.classList.add('opacity-0');
+            
+            // รอให้ออนิเมชันจางหายเสร็จก่อนค่อยซ่อน Element
+            setTimeout(() => {
+                popup.classList.remove('flex');
+                popup.classList.add('hidden');
+            }, 300);
+
+            // คืนค่า Scroll หน้าเว็บหลัก
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // ปิดหน้าต่างเมื่อคลิกพื้นที่ว่างรอบๆ รูปภาพ
+        document.getElementById('popup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeImage();
+            }
+        });
+    </script>
 
 </body>
-
 </html>
