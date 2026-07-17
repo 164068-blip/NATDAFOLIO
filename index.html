@@ -47,17 +47,17 @@
             color: #0C4A6E;
         }
         /* ซ่อน Scrollbar ของบราวเซอร์เพื่อความพรีเมียม แต่ยังสกรอลล์ได้ปกติ */
-        ::-webkit-scrollbar {
+        ::webkit-scrollbar {
             width: 8px;
         }
-        ::-webkit-scrollbar-track {
+        ::webkit-scrollbar-track {
             background: #F0F9FF;
         }
-        ::-webkit-scrollbar-thumb {
+        ::webkit-scrollbar-thumb {
             background: #0284C7;
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover {
+        ::webkit-scrollbar-thumb:hover {
             background: #075985;
         }
     </style>
@@ -123,7 +123,7 @@
                 </div>
             </div>
             
-            <!-- กรอบใส่รูปภาพหน้าปกพอร์ตโฟลิโอของคุณณัฐดา (ดึงไฟล์จากโฟลเดอร์ภาพในเครื่องคุณ) -->
+            <!-- กรอบใส่รูปภาพหน้าปกพอร์ตโฟลิโอของคุณณัฐดา -->
             <div class="md:col-span-5 flex justify-center">
                 <div class="relative w-full max-w-sm">
                     <!-- เอฟเฟกต์วงกลมเรืองแสงสีฟ้าอยู่หลังรูปภาพ -->
@@ -132,12 +132,7 @@
                     <!-- การ์ดกรอบรูปภาพ -->
                     <div class="relative bg-white p-4 rounded-[2.5rem] shadow-2xl border border-brand-light">
                         <div class="aspect-[3/4] rounded-[2rem] bg-brand-light overflow-hidden relative flex items-center justify-center">
-                            
-                            <!-- [!] วิธีใช้งานรูปภาพของคุณเอง: 
-                                 ให้นำรูปถ่ายสุภาพในชุดนักเรียนของคุณ ขนาด 3x4 ไปเซฟไว้ในโฟลเดอร์เดียวกันกับไฟล์เว็บนี้ 
-                                 สร้างโฟลเดอร์ชื่อ images แล้วตั้งชื่อไฟล์ภาพว่า profile.jpg 
-                                 ระบบจะดึงภาพนั้นมาขึ้นหน้าจอนี้ทันทีค่ะ! -->
-                        <img src="images/1.jpg" alt="รูปภาพ ณัฐดา สุขพิทักษ์"
+                            <img src="images/1.jpg" alt="รูปภาพ ณัฐดา สุขพิทักษ์"
                                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                                  onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-brand-dark\'><i data-lucide=\'image\' class=\'w-16 h-16 mx-auto mb-4 text-brand-dark/40\'><\/i><p class=\'font-title text-lg font-semibold\'>รูปภาพหลัก (ปก)<\/p><p class=\'text-xs text-slate-500 mt-2\'>สร้างโฟลเดอร์ชื่อ <b>images</b><br>แล้วใส่รูปชื่อ <b>profile.jpg</b> ในนั้น<\/p><\/div>'; lucide.createIcons();">
                         </div>
@@ -254,7 +249,7 @@
                 <!-- จุดที่ 1 มัธยมปลาย -->
                 <div class="relative pl-8 md:pl-12">
                     <!-- จุดไฟดวงกลมหัวไลน์สีฟ้าเข้มส่องสว่าง -->
-                    <span class="absolute -left-[11px] top-1.5 flex h-5 h-5 w-5 items-center justify-center rounded-full bg-brand-dark ring-4 ring-brand-light">
+                    <span class="absolute -left-[11px] top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-brand-dark ring-4 ring-brand-light">
                         <span class="h-2 w-2 rounded-full bg-white"></span>
                     </span>
                     <div class="bg-white p-6 rounded-3xl border border-brand-light shadow-sm hover:shadow-md transition-all duration-300">
@@ -270,7 +265,7 @@
 
                 <!-- จุดที่ 2 มัธยมต้น -->
                 <div class="relative pl-8 md:pl-12">
-                    <span class="absolute -left-[11px] top-1.5 flex h-5 h-5 w-5 items-center justify-center rounded-full bg-brand-medium ring-4 ring-brand-light">
+                    <span class="absolute -left-[11px] top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-brand-medium ring-4 ring-brand-light">
                         <span class="h-2 w-2 rounded-full bg-white"></span>
                     </span>
                     <div class="bg-white p-6 rounded-3xl border border-brand-light shadow-sm hover:shadow-md transition-all duration-300">
@@ -286,7 +281,7 @@
         </div>
     </section>
 
-    <!-- ACTIVITIES / ผลงานกิจกรรมที่ภาคภูมิใจ (เปลี่ยนเป็นภาพกิจกรรมในโฟลเดอร์เครื่องคุณได้ทันที) -->
+    <!-- ACTIVITIES / ผลงานกิจกรรมที่ภาคภูมิใจ -->
     <section id="activities" class="py-24 bg-white">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -300,14 +295,11 @@
                 
                 <!-- การ์ดกิจกรรมที่ 1 -->
                 <div class="bg-brand-superlight rounded-[2rem] overflow-hidden border border-brand-light/60 hover:shadow-xl hover:shadow-brand-light/30 transition-all duration-300 group">
-                    <!-- ส่วนภาพกิจกรรม 1 -->
                     <div class="aspect-video bg-brand-soft overflow-hidden relative flex items-center justify-center">
-                        <!-- [!] วิธีใช้งาน: เอาภาพกิจกรรมใส่ในโฟลเดอร์ images ตั้งชื่อว่า activity1.jpg -->
                         <img src="images/activity1.jpg" alt="กิจกรรมอาสาสมัคร" 
                              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                              onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-4 text-brand-dark\'><i data-lucide=\'heart-handshake\' class=\'w-12 h-12 mx-auto mb-2 opacity-50\'><\/i><p class=\'text-xs text-slate-500\'>รูปกิจกรรม 1 ในโฟลเดอร์<br><b>images/activity1.jpg</b><\/p><\/div>'; lucide.createIcons();">
                     </div>
-                    <!-- เนื้อหาคำอธิบาย -->
                     <div class="p-6 space-y-3">
                         <span class="bg-brand-light text-brand-deep text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">จิตอาสาและการแพทย์</span>
                         <h4 class="font-title text-lg font-bold text-brand-navy">โครงการรณรงค์คัดกรองสุขภาพผู้สูงอายุ</h4>
@@ -320,7 +312,6 @@
                 <!-- การ์ดกิจกรรมที่ 2 -->
                 <div class="bg-brand-superlight rounded-[2rem] overflow-hidden border border-brand-light/60 hover:shadow-xl hover:shadow-brand-light/30 transition-all duration-300 group">
                     <div class="aspect-video bg-brand-soft overflow-hidden relative flex items-center justify-center">
-                        <!-- [!] วิธีใช้งาน: เอาภาพกิจกรรมใส่ในโฟลเดอร์ images ตั้งชื่อว่า activity2.jpg -->
                         <img src="images/activity2.jpg" alt="กิจกรรมอบรมปฐมพยาบาล" 
                              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                              onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-4 text-brand-dark\'><i data-lucide=\'shield-alert\' class=\'w-12 h-12 mx-auto mb-2 opacity-50\'><\/i><p class=\'text-xs text-slate-500\'>รูปกิจกรรม 2 ในโฟลเดอร์<br><b>images/activity2.jpg</b><\/p><\/div>'; lucide.createIcons();">
@@ -337,7 +328,6 @@
                 <!-- การ์ดกิจกรรมที่ 3 -->
                 <div class="bg-brand-superlight rounded-[2rem] overflow-hidden border border-brand-light/60 hover:shadow-xl hover:shadow-brand-light/30 transition-all duration-300 group">
                     <div class="aspect-video bg-brand-soft overflow-hidden relative flex items-center justify-center">
-                        <!-- [!] วิธีใช้งาน: เอาภาพกิจกรรมใส่ในโฟลเดอร์ images ตั้งชื่อว่า activity3.jpg -->
                         <img src="images/activity3.jpg" alt="กิจกรรมโรงเรียน" 
                              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                              onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-4 text-brand-dark\'><i data-lucide=\'users\' class=\'w-12 h-12 mx-auto mb-2 opacity-50\'><\/i><p class=\'text-xs text-slate-500\'>รูปกิจกรรม 3 ในโฟลเดอร์<br><b>images/activity3.jpg</b><\/p><\/div>'; lucide.createIcons();">
@@ -355,7 +345,7 @@
         </div>
     </section>
 
-    <!-- CERTIFICATES / ส่วนโชว์เกียรติบัตร (สวยเน้นๆ ดูง่าย ชวนให้ดึงดูดสายตากรรมการ) -->
+    <!-- CERTIFICATES / ส่วนโชว์เกียรติบัตร -->
     <section id="certificates" class="py-24 bg-brand-superlight">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -370,7 +360,6 @@
                 <!-- ใบที่ 1 -->
                 <div class="bg-white p-5 rounded-[2.5rem] shadow-md border border-brand-light hover:-translate-y-1 transition-all duration-300">
                     <div class="aspect-[1.414/1] bg-slate-100 rounded-2xl overflow-hidden relative flex items-center justify-center border border-slate-200">
-                        <!-- [!] วิธีใช้งาน: นำรูปสแกนเกียรติบัตรใส่ในโฟลเดอร์ images ตั้งชื่อว่า cert1.jpg -->
                         <img src="images/cert1.jpg" alt="เกียรติบัตรใบที่ 1" 
                              class="w-full h-full object-cover"
                              onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-brand-dark\'><i data-lucide=\'scroll\' class=\'w-16 h-16 mx-auto mb-4 opacity-40\'><\/i><p class=\'text-sm font-semibold\'>เกียรติบัตรใบที่ 1<\/p><p class=\'text-xs text-slate-400 mt-2\'>บันทึกไฟล์ภาพเป็น <b>images/cert1.jpg</b><\/p><\/div>'; lucide.createIcons();">
@@ -384,7 +373,6 @@
                 <!-- ใบที่ 2 -->
                 <div class="bg-white p-5 rounded-[2.5rem] shadow-md border border-brand-light hover:-translate-y-1 transition-all duration-300">
                     <div class="aspect-[1.414/1] bg-slate-100 rounded-2xl overflow-hidden relative flex items-center justify-center border border-slate-200">
-                        <!-- [!] วิธีใช้งาน: นำรูปสแกนเกียรติบัตรใส่ในโฟลเดอร์ images ตั้งชื่อว่า cert2.jpg -->
                         <img src="images/cert2.jpg" alt="เกียรติบัตรใบที่ 2" 
                              class="w-full h-full object-cover"
                              onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-brand-dark\'><i data-lucide=\'scroll\' class=\'w-16 h-16 mx-auto mb-4 opacity-40\'><\/i><p class=\'text-sm font-semibold\'>เกียรติบัตรใบที่ 2<\/p><p class=\'text-xs text-slate-400 mt-2\'>บันทึกไฟล์ภาพเป็น <b>images/cert2.jpg</b><\/p><\/div>'; lucide.createIcons();">
@@ -399,7 +387,7 @@
         </div>
     </section>
 
-    <!-- CONTACT / ช่องทางติดต่อผู้สมัคร (ธีมสีน้ำเงินกรมท่าเข้มตัดสีฟ้าพาสเทล สง่างามปิดท้าย) -->
+    <!-- CONTACT / ช่องทางติดต่อผู้สมัคร -->
     <section id="contact" class="bg-gradient-to-tr from-brand-navy to-brand-deep text-white py-24 relative overflow-hidden">
         
         <div class="max-w-5xl mx-auto px-6 relative z-10">
@@ -472,28 +460,9 @@
         </div>
     </section>
 
-    <!-- สคริปต์รัน Lucide Icon ให้ทำงานได้อย่างสมบูรณ์แบบ -->
+    <!-- Script สำหรับเปิดใช้งาน Lucide Icons บนเว็บไซต์ -->
     <script>
         lucide.createIcons();
     </script>
 </body>
 </html>
-```eof
-
----
-
-### 📂 วิธีการใช้งานไฟล์พอร์ตโฟลิโอในเครื่องของคุณณัฐดา:
-
-เพื่อให้ระบบดึงภาพมาแสดงผลได้แบบเรียลไทม์ โดยไม่ต้องกังวลเรื่องลิงก์รูปภาพออนไลน์ คุณสามารถทำตามขั้นตอนนี้ได้ทันทีค่ะ:
-
-1. **คัดลอกโค้ดด้านบนทั้งหมด** ไปวางในโปรแกรมเขียนโค้ด (เช่น VS Code, Notepad, หรือ Sublime Text) แล้วบันทึกเป็นชื่อไฟล์ `index.html` 
-2. **สร้างโฟลเดอร์สำหรับเก็บภาพ** โดยให้อยู่ในตําแหน่งเดียวกันกับตัวไฟล์ `index.html` ให้ตั้งชื่อโฟลเดอร์ว่า **`images`**
-3. **จัดเก็บและตั้งชื่อไฟล์ภาพ** ให้นำภาพของคุณมาจัดเก็บในโฟลเดอร์ `images` และตั้งชื่อให้ตรงกับระบบดังนี้เลยค่ะ:
-   * **`profile.jpg`** ➡ รูปเดี่ยวครึ่งตัวสุภาพของคุณ สำหรับใช้บนหน้าปกหลัก
-   * **`activity1.jpg`** ➡ รูปกิจกรรมจิตอาสาข้อที่ 1
-   * **`activity2.jpg`** ➡ รูปกิจกรรมฝึกอบรมข้อที่ 2
-   * **`activity3.jpg`** ➡ รูปกิจกรรมความเป็นผู้นำข้อที่ 3
-   * **`cert1.jpg`** ➡ ภาพสแกนเกียรติบัตรใบที่ 1
-   * **`cert2.jpg`** ➡ ภาพสแกนเกียรติบัตรใบที่ 2
-
-*หมายเหตุ: หากคุณยังไม่มีรูปภาพจริงในโฟลเดอร์ ระบบอัจฉริยะที่เขียนไว้จะทำการแสดงผลรูปภาพจำลองและสัญลักษณ์การแพทย์แทนการเกิดหน้าจอเปล่า (Error) เพื่อให้หน้านิเทศพอร์ตโฟลิโอยังคงความสวยงามเรียบร้อยอยู่ตลอดเวลาค่ะ!*
