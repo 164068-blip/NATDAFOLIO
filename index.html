@@ -1,287 +1,136 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Image Gallery</title>
+    <style>
+        /* === ส่วนของ CSS: จัดการหน้าตาและ Layout === */
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
 
-<title>ณัฐดา สุขพิทักษ์ | Portfolio</title>
+        /* จัดรูปภาพเป็นแบบ Grid (ตารางการ์ด) */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
 
-<link rel="stylesheet" href="style.css">
+        /* การ์ดใส่รูปภาพ */
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
 
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* บีบรูปให้พอดีกรอบสวยงาม */
+            display: block;
+        }
+
+        .card p {
+            padding: 12px;
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            word-break: break-all;
+        }
+
+        .loading {
+            font-size: 18px;
+            color: #666;
+            font-weight: bold;
+        }
+    </style>
 </head>
-
-
 <body>
 
-
-<!-- เอฟเฟกต์แสง -->
-
-<div class="glow glow1"></div>
-<div class="glow glow2"></div>
-<div class="glow glow3"></div>
-
-
-
-
-<!-- Header -->
-
-<header>
-
-
-<div class="logo">
-NATTHADA
-</div>
-
-
-<nav>
-
-<a href="#home">หน้าแรก</a>
-<a href="#about">ประวัติ</a>
-<a href="#work">ผลงาน</a>
-<a href="#contact">ติดต่อ</a>
-
-</nav>
-
-
-</header>
-
-
-
-
-
-
-<!-- Hero -->
-
-
-<section class="hero" id="home">
-
-
-<div class="hero-box">
-
-
-<span>
-PORTFOLIO 2026
-</span>
-
-
-<h1>
-นางสาวณัฐดา สุขพิทักษ์
-</h1>
-
-
-<h2>
-วิทยาลัยพยาบาลบรมราชชนนี
-</h2>
-
-
-
-<p>
-
-แฟ้มสะสมผลงานเพื่อแสดงความสามารถ
-ประสบการณ์ กิจกรรม และความมุ่งมั่น
-ในการศึกษาด้านวิชาชีพพยาบาล
-
-</p>
-
-
-
-<div class="btn">
-
-<a href="#">
-VIEW PORTFOLIO
-</a>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-<div class="profile">
-
-
-<div class="ring"></div>
-
-
-<img src="images/profile.png">
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- About -->
-
-
-<section id="about">
-
-
-<h1 class="section-title">
-ABOUT ME
-</h1>
-
-
-
-<div class="card">
-
-
-<h2>
-ข้อมูลส่วนตัว
-</h2>
-
-
-<p>
-ชื่อ : นางสาวณัฐดา สุขพิทักษ์
-</p>
-
-
-<p>
-สถานศึกษา : วิทยาลัยพยาบาลบรมราชชนนี
-</p>
-
-
-<p>
-เป้าหมาย : พัฒนาความรู้และทักษะ
-เพื่อก้าวสู่สายวิชาชีพสุขภาพ
-</p>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<!-- Portfolio -->
-
-
-<section id="work">
-
-
-<h1 class="section-title">
-MY WORK
-</h1>
-
-
-
-<div class="gallery">
-
-
-<div class="card work">
-
-<img src="images/project1.jpg">
-
-<h3>
-ผลงานที่ 1
-</h3>
-
-</div>
-
-
-
-<div class="card work">
-
-<img src="images/project2.jpg">
-
-<h3>
-ผลงานที่ 2
-</h3>
-
-</div>
-
-
-
-
-<div class="card work">
-
-<img src="images/project3.jpg">
-
-<h3>
-ผลงานที่ 3
-</h3>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- Contact -->
-
-
-<section id="contact">
-
-
-<h1 class="section-title">
-CONTACT
-</h1>
-
-
-<div class="card contact">
-
-
-<p>
-📧 Email : example@email.com
-</p>
-
-
-<p>
-📱 Phone : 08x-xxx-xxxx
-</p>
-
-
-<p>
-🏫 วิทยาลัยพยาบาลบรมราชชนนี
-</p>
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-<footer>
-
-© 2026 Natthada Sukpitak
-
-</footer>
-
-
-
+    <h1>คลังรูปภาพจาก GitHub</h1>
+    <div id="loading" class="loading">กำลังโหลดรูปภาพ...</div>
+    <div class="gallery" id="gallery"></div>
+
+    <!-- === ส่วนของ JavaScript: ดึงข้อมูลจาก GitHub API === -->
+    <script>
+        // 1. ตั้งค่าข้อมูล GitHub ของคุณตรงนี้
+        const username = 'YOUR_GITHUB_USERNAME'; // ชื่อ User GitHub ของคุณ
+        const repo = 'YOUR_REPO_NAME';           // ชื่อ Repository
+        const folderPath = 'images';             // ชื่อโฟลเดอร์ที่เก็บรูปภาพ (ถ้าอยู่โฟลเดอร์นอกสุดให้ใส่เป็น '')
+
+        // API ของ GitHub สำหรับดึงรายชื่อไฟล์ในโฟลเดอร์
+        const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${folderPath}`;
+
+        async function fetchImages() {
+            try {
+                const response = await fetch(apiUrl);
+                
+                if (!response.ok) {
+                    throw new Error('ไม่สามารถเชื่อมต่อ GitHub API ได้ กรุณาตรวจสอบข้อมูลการตั้งค่า');
+                }
+
+                const files = await response.json();
+                const gallery = document.getElementById('gallery');
+                
+                // ซ่อนตัวหนังสือ Loading เมื่อโหลดเสร็จ
+                document.getElementById('loading').style.display = 'none';
+
+                // นามสกุลรูปภาพที่อนุญาตให้แสดง
+                const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
+
+                files.forEach(file => {
+                    // เช็คว่าเป็นไฟล์ และเป็นไฟล์รูปภาพหรือไม่
+                    const isImage = allowedExtensions.some(ext => file.name.toLowerCase().endsWith(ext));
+                    
+                    if (file.type === 'file' && isImage) {
+                        // สร้าง HTML Element สำหรับแสดงผลทีละรูป
+                        const card = document.createElement('div');
+                        card.className = 'card';
+
+                        const img = document.createElement('img');
+                        img.src = file.download_url; // ลิงก์ Raw Image จาก GitHub
+                        img.alt = file.name;
+                        img.loading = 'lazy'; // ทำ Lazy Load เพื่อช่วยให้เว็บโหลดเร็วขึ้น
+
+                        const nameTag = document.createElement('p');
+                        nameTag.textContent = file.name; // แสดงชื่อไฟล์
+
+                        card.appendChild(img);
+                        card.appendChild(nameTag);
+                        gallery.appendChild(card);
+                    }
+                });
+
+            } catch (error) {
+                document.getElementById('loading').textContent = `เกิดข้อผิดพลาด: ${error.message}`;
+                console.error(error);
+            }
+        }
+
+        // เริ่มทำงาน
+        fetchImages();
+    </script>
 </body>
-
 </html>
