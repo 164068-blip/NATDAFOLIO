@@ -1,169 +1,272 @@
-/* ==================================
-   NATTHADA PORTFOLIO
-   PREMIUM ANIMATION SCRIPT
-================================== */
+<!DOCTYPE html>
+<html lang="th">
 
+<head>
 
+<meta charset="UTF-8">
 
-// เปิดหน้าเว็บ Animation
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-window.addEventListener("load",()=>{
 
+<title>
+About | ณัฐดา สุขพิทักษ์
+</title>
 
-    document.body.classList.add("loaded");
 
+<link rel="stylesheet" href="style.css">
 
-});
 
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 
+</head>
 
 
-// Navbar Scroll Effect
 
+<body>
 
-window.addEventListener("scroll",()=>{
 
 
-    const nav = document.querySelector("nav");
+<header>
 
+<div class="logo">
+NATTHADA
+</div>
 
-    if(window.scrollY > 50){
 
-        nav.style.background =
-        "rgba(255,255,255,0.12)";
 
-        nav.style.backdropFilter =
-        "blur(20px)";
+<nav>
 
-        nav.style.borderRadius =
-        "20px";
+<a href="index.html">
+Home
+</a>
 
-    }
 
-    else{
+<a href="about.html">
+About
+</a>
 
 
-        nav.style.background="transparent";
+<a href="education.html">
+Education
+</a>
 
 
-    }
+<a href="activities.html">
+Activities
+</a>
 
 
-});
+<a href="certificates.html">
+Certificates
+</a>
 
 
+<a href="projects.html">
+Projects
+</a>
 
 
+</nav>
 
 
-// Profile Card Floating Effect
+</header>
 
 
-const card =
-document.querySelector(".profile-card");
 
 
 
-document.addEventListener(
-"mousemove",
-(e)=>{
 
 
-let x =
-(e.clientX / window.innerWidth -0.5)*20;
+<section class="about-page">
 
 
-let y =
-(e.clientY / window.innerHeight -0.5)*20;
 
+<div class="title">
 
 
-card.style.transform =
-`
-rotateY(${x}deg)
-rotateX(${-y}deg)
-`;
+<p>
+ABOUT ME
+</p>
 
 
+<h1>
+ประวัติส่วนตัว
+</h1>
 
-});
 
+</div>
 
 
 
 
 
 
-// Smooth Scroll
+<div class="about-card">
 
 
-document.querySelectorAll("nav li")
-.forEach(item=>{
 
+<div class="about-image">
 
-item.addEventListener(
-"click",
-()=>{
 
+<img src="images/profile.png">
 
-window.scrollTo({
 
-top:window.innerHeight,
+</div>
 
-behavior:"smooth"
 
-});
 
 
-});
 
+<div class="about-info">
 
-});
 
+<h2>
+นางสาว ณัฐดา สุขพิทักษ์
+</h2>
 
 
 
+<p>
 
+นักเรียนระดับชั้นมัธยมศึกษาตอนปลาย
 
+<br>
 
-// Create Floating Bubble
+โรงเรียนกระทุ่มแบน "วิเศษสมุทคุณ"
 
+</p>
 
-function createBubble(){
 
 
-const bubble =
-document.createElement("div");
+<div class="info-list">
 
 
-bubble.className="bubble";
+<div>
 
+<span>
+🎂
+</span>
 
-bubble.style.left =
-Math.random()*100+"%";
+วันเกิด
 
+<br>
 
-bubble.style.animationDuration =
-(5+Math.random()*5)+"s";
+<strong>
+ใส่วันเดือนปีเกิด
+</strong>
 
 
-document.body.appendChild(bubble);
+</div>
 
 
 
-setTimeout(()=>{
 
+<div>
 
-bubble.remove();
+<span>
+🏫
+</span>
 
+สถานศึกษา
 
-},10000);
+<br>
 
+<strong>
+โรงเรียนกระทุ่มแบน
+"วิเศษสมุทคุณ"
+</strong>
 
 
-}
+</div>
 
 
 
-setInterval(createBubble,800);
+
+
+<div>
+
+<span>
+🎓
+</span>
+
+เป้าหมาย
+
+<br>
+
+<strong>
+สถาบันพระบรมราชชนก
+</strong>
+
+
+</div>
+
+
+
+
+<div>
+
+<span>
+💙
+</span>
+
+ความสนใจ
+
+<br>
+
+<strong>
+วิทยาศาสตร์สุขภาพ
+และเทคโนโลยี
+</strong>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<section class="quote">
+
+
+<h2>
+"My Passion"
+</h2>
+
+
+<p>
+
+มุ่งมั่นพัฒนาความรู้
+ทักษะ และประสบการณ์
+
+เพื่อเติบโตในสายวิชาชีพ
+ด้านสุขภาพ
+
+</p>
+
+
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+</body>
+
+</html>
