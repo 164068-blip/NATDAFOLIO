@@ -1,19 +1,19 @@
-/* ====================================
+/* =====================================
    NATTHADA PORTFOLIO 2026
-   PREMIUM JAVASCRIPT EFFECT
-==================================== */
+   MODERN JAVASCRIPT EFFECT
+===================================== */
 
 
 
-// ================================
-// PAGE LOAD EFFECT
-// ================================
+// ==========================
+// PAGE LOAD
+// ==========================
 
 
 window.addEventListener("load",()=>{
 
 
-document.body.classList.add("show");
+    document.body.classList.add("loaded");
 
 
 });
@@ -23,90 +23,84 @@ document.body.classList.add("show");
 
 
 
-
-// ================================
-// NAVBAR GLASS EFFECT
-// ================================
-
-
-window.addEventListener("scroll",()=>{
+// ==========================
+// SCROLL REVEAL
+// ==========================
 
 
-const header =
-document.querySelector("header");
+const items = document.querySelectorAll(
+".stats div, .project-card, .profile-box"
+);
 
 
 
-if(window.scrollY > 50){
+function reveal(){
 
 
-header.style.background =
-"rgba(255,255,255,0.12)";
+items.forEach(item=>{
 
 
-header.style.backdropFilter =
-"blur(20px)";
+let position =
+item.getBoundingClientRect().top;
 
 
-header.style.borderRadius =
-"25px";
+let screen =
+window.innerHeight - 80;
 
 
-header.style.padding =
-"15px 30px";
 
+if(position < screen){
+
+item.classList.add("show");
 
 }
-
-
-else{
-
-
-header.style.background =
-"transparent";
-
-
-header.style.backdropFilter =
-"none";
-
-
-}
-
 
 
 });
 
 
+}
+
+
+
+window.addEventListener(
+"scroll",
+reveal
+);
+
+
+reveal();
 
 
 
 
 
 
-// ================================
-// PROFILE 3D MOUSE EFFECT
-// ================================
+
+// ==========================
+// PROFILE 3D EFFECT
+// ==========================
 
 
 const profile =
-document.querySelector(".profile-card");
+document.querySelector(".profile-box");
 
 
 
 if(profile){
 
 
-document.addEventListener(
+profile.addEventListener(
 "mousemove",
 (e)=>{
 
 
 let x =
-(e.clientX / window.innerWidth -0.5)*20;
+(e.offsetX / profile.offsetWidth - .5) * 20;
 
 
 let y =
-(e.clientY / window.innerHeight -0.5)*20;
+(e.offsetY / profile.offsetHeight - .5) * 20;
 
 
 
@@ -122,123 +116,96 @@ rotateX(${-y}deg)
 });
 
 
-}
 
 
+profile.addEventListener(
+"mouseleave",
+()=>{
 
 
-
-
-
-// ================================
-// SCROLL REVEAL
-// ================================
-
-
-const reveal =
-document.querySelectorAll(
-".card, .menu-card div, .project-card"
-);
-
-
-
-function showReveal(){
-
-
-reveal.forEach(item=>{
-
-
-let top =
-item.getBoundingClientRect().top;
-
-
-let screen =
-window.innerHeight -100;
-
-
-
-if(top < screen){
-
-
-item.classList.add("active");
-
-
-}
-
+profile.style.transform =
+"rotateY(0deg) rotateX(0deg)";
 
 
 });
 
 
 }
+
+
+
+
+
+
+
+// ==========================
+// NAVBAR BLUR
+// ==========================
 
 
 
 window.addEventListener(
 "scroll",
-showReveal
-);
-
-
-
-showReveal();
-
-
-
-
-
-
-
-
-// ================================
-// IMAGE CLICK ZOOM
-// ================================
-
-
-const images =
-document.querySelectorAll(
-"img"
-);
-
-
-
-images.forEach(img=>{
-
-
-img.addEventListener(
-"click",
 ()=>{
 
 
-img.classList.toggle(
-"zoom"
-);
+const header =
+document.querySelector("header");
+
+
+
+if(window.scrollY > 60){
+
+
+header.style.background =
+"rgba(255,255,255,.08)";
+
+
+header.style.backdropFilter =
+"blur(20px)";
+
+
+header.style.borderRadius =
+"25px";
+
+
+}
+
+
+else{
+
+
+header.style.background =
+"transparent";
+
+
+}
 
 
 });
 
 
-});
 
 
 
 
 
 
-
-// ================================
-// FLOATING LIGHT
-// ================================
+// ==========================
+// FLOATING LIGHT EFFECT
+// ==========================
 
 
 function createLight(){
 
 
+
 const light =
-document.createElement("div");
+document.createElement("span");
 
 
-light.className="light";
+
+light.className="floating-light";
 
 
 
@@ -272,5 +239,5 @@ light.remove();
 
 setInterval(
 createLight,
-800
+900
 );
