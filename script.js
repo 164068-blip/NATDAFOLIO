@@ -1,65 +1,43 @@
-/* =====================================
-   NATTHADA PORTFOLIO 2026
-   MODERN JAVASCRIPT EFFECT
-===================================== */
+// ================================
+// NATTHADA PORTFOLIO SCRIPT
+// Ocean Animation
+// ================================
 
 
 
-// ==========================
-// PAGE LOAD
-// ==========================
+// Scroll Reveal Animation
+
+const sections = document.querySelectorAll("section");
 
 
-window.addEventListener("load",()=>{
+const reveal = () => {
 
 
-    document.body.classList.add("loaded");
+    sections.forEach(section => {
 
 
-});
+        const top = section.getBoundingClientRect().top;
 
 
-
-
-
-
-// ==========================
-// SCROLL REVEAL
-// ==========================
-
-
-const items = document.querySelectorAll(
-".stats div, .project-card, .profile-box"
-);
+        const windowHeight = window.innerHeight;
 
 
 
-function reveal(){
+        if(top < windowHeight - 100){
 
 
-items.forEach(item=>{
+            section.style.opacity = "1";
+
+            section.style.transform = "translateY(0)";
 
 
-let position =
-item.getBoundingClientRect().top;
+        }
 
 
-let screen =
-window.innerHeight - 80;
+    });
 
 
-
-if(position < screen){
-
-item.classList.add("show");
-
-}
-
-
-});
-
-
-}
+};
 
 
 
@@ -69,6 +47,29 @@ reveal
 );
 
 
+
+
+
+// ตั้งค่าเริ่มต้น Animation
+
+
+sections.forEach(section=>{
+
+
+    section.style.opacity="0";
+
+
+    section.style.transform="translateY(60px)";
+
+
+    section.style.transition=
+    "all 1s ease";
+
+
+});
+
+
+
 reveal();
 
 
@@ -76,18 +77,99 @@ reveal();
 
 
 
+// Navbar เปลี่ยนเมื่อ Scroll
 
-// ==========================
-// PROFILE 3D EFFECT
-// ==========================
+
+const header =
+document.querySelector("header");
+
+
+
+window.addEventListener(
+"scroll",
+()=>{
+
+
+    if(window.scrollY > 50){
+
+
+        header.style.background =
+        "rgba(255,255,255,0.12)";
+
+
+        header.style.backdropFilter =
+        "blur(15px)";
+
+
+        header.style.borderRadius =
+        "20px";
+
+
+        header.style.padding =
+        "15px 30px";
+
+
+    }
+
+
+    else{
+
+
+        header.style.background =
+        "transparent";
+
+
+        header.style.backdropFilter =
+        "none";
+
+
+    }
+
+
+
+});
+
+
+
+
+
+
+
+// Mouse Glow Effect
+
+
+const light =
+document.querySelector(".light");
+
+
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+
+    light.style.left =
+    e.clientX - 250 + "px";
+
+
+    light.style.top =
+    e.clientY - 250 + "px";
+
+
+
+});
+
+
+
+
+
+
+// Image Hover 3D Effect
 
 
 const profile =
 document.querySelector(".profile-box");
 
-
-
-if(profile){
 
 
 profile.addEventListener(
@@ -96,16 +178,19 @@ profile.addEventListener(
 
 
 let x =
-(e.offsetX / profile.offsetWidth - .5) * 20;
+(e.offsetX -
+profile.offsetWidth/2)
+/20;
 
 
 let y =
-(e.offsetY / profile.offsetHeight - .5) * 20;
+(e.offsetY -
+profile.offsetHeight/2)
+/20;
 
 
 
 profile.style.transform =
-
 `
 rotateY(${x}deg)
 rotateX(${-y}deg)
@@ -114,6 +199,7 @@ rotateX(${-y}deg)
 
 
 });
+
 
 
 
@@ -130,114 +216,45 @@ profile.style.transform =
 });
 
 
-}
 
 
 
 
 
+// Portfolio Card Animation
 
 
-// ==========================
-// NAVBAR BLUR
-// ==========================
+const cards =
+document.querySelectorAll(".project");
 
 
 
-window.addEventListener(
-"scroll",
+cards.forEach(card=>{
+
+
+card.addEventListener(
+"mouseenter",
 ()=>{
 
 
-const header =
-document.querySelector("header");
-
-
-
-if(window.scrollY > 60){
-
-
-header.style.background =
-"rgba(255,255,255,.08)";
-
-
-header.style.backdropFilter =
-"blur(20px)";
-
-
-header.style.borderRadius =
-"25px";
-
-
-}
-
-
-else{
-
-
-header.style.background =
-"transparent";
-
-
-}
+card.style.transform =
+"translateY(-15px) scale(1.03)";
 
 
 });
 
 
 
+card.addEventListener(
+"mouseleave",
+()=>{
 
 
+card.style.transform =
+"translateY(0) scale(1)";
 
 
-
-// ==========================
-// FLOATING LIGHT EFFECT
-// ==========================
+});
 
 
-function createLight(){
-
-
-
-const light =
-document.createElement("span");
-
-
-
-light.className="floating-light";
-
-
-
-light.style.left =
-Math.random()*100+"%";
-
-
-
-light.style.animationDuration =
-(5+Math.random()*5)+"s";
-
-
-
-document.body.appendChild(light);
-
-
-
-setTimeout(()=>{
-
-
-light.remove();
-
-
-},10000);
-
-
-
-}
-
-
-
-setInterval(
-createLight,
-900
-);
+});
