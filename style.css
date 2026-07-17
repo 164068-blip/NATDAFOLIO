@@ -1,63 +1,80 @@
-/* ===================================
+/* =====================================
    NATTHADA PORTFOLIO 2026
-   PREMIUM UNIVERSITY UI
-=================================== */
+   PREMIUM UNIVERSITY DESIGN
+===================================== */
 
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Kanit',sans-serif;
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+font-family:'Kanit',sans-serif;
+
+}
+
+
+
+html{
+
+scroll-behavior:smooth;
+
 }
 
 
 
 body{
 
-    background:
+min-height:100vh;
 
-    linear-gradient(
-    135deg,
-    #001b44,
-    #004aad,
-    #00c6ff
-    );
+background:
 
-    color:white;
+linear-gradient(
+135deg,
+#001b44,
+#005bea,
+#00c6ff
+);
 
-    min-height:100vh;
 
-    overflow-x:hidden;
+color:white;
+
+overflow-x:hidden;
 
 }
 
 
 
 
+/* BACKGROUND EFFECT */
+
 
 body::before{
 
-    content:"";
 
-    position:fixed;
+content:"";
 
-    width:500px;
-    height:500px;
+position:fixed;
 
-    background:#00eaff;
+width:500px;
 
-    border-radius:50%;
+height:500px;
 
-    filter:blur(120px);
+background:#00eaff;
 
-    top:-200px;
+border-radius:50%;
 
-    left:-150px;
+filter:blur(120px);
 
-    opacity:.35;
+top:-200px;
 
-    z-index:-1;
+left:-150px;
+
+opacity:.35;
+
+z-index:-1;
+
 
 }
 
@@ -65,26 +82,29 @@ body::before{
 
 body::after{
 
-    content:"";
 
-    position:fixed;
+content:"";
 
-    width:450px;
-    height:450px;
+position:fixed;
 
-    background:white;
+width:450px;
 
-    border-radius:50%;
+height:450px;
 
-    filter:blur(150px);
+background:#ffffff;
 
-    bottom:-200px;
+border-radius:50%;
 
-    right:-100px;
+filter:blur(130px);
 
-    opacity:.15;
+right:-150px;
 
-    z-index:-1;
+bottom:-200px;
+
+opacity:.15;
+
+z-index:-1;
+
 
 }
 
@@ -92,36 +112,41 @@ body::after{
 
 
 
-/* =====================
- NAVBAR
-===================== */
+
+
+/* =========================
+NAVBAR
+========================= */
 
 
 header{
 
-    width:90%;
 
-    margin:auto;
+width:90%;
 
-    padding:25px 0;
+margin:auto;
 
-    display:flex;
+padding:25px 0;
 
-    justify-content:space-between;
+display:flex;
 
-    align-items:center;
+justify-content:space-between;
+
+align-items:center;
+
 
 }
 
 
-
 .logo{
 
-    font-size:30px;
 
-    font-weight:700;
+font-size:30px;
 
-    letter-spacing:3px;
+font-weight:700;
+
+letter-spacing:3px;
+
 
 }
 
@@ -129,9 +154,11 @@ header{
 
 nav{
 
-    display:flex;
 
-    gap:25px;
+display:flex;
+
+gap:25px;
+
 
 }
 
@@ -139,13 +166,15 @@ nav{
 
 nav a{
 
-    color:white;
 
-    text-decoration:none;
+text-decoration:none;
 
-    font-size:16px;
+color:white;
 
-    transition:.3s;
+font-size:16px;
+
+transition:.3s;
+
 
 }
 
@@ -153,7 +182,11 @@ nav a{
 
 nav a:hover{
 
-    color:#8cecff;
+
+color:#9cecff;
+
+transform:translateY(-3px);
+
 
 }
 
@@ -161,26 +194,30 @@ nav a:hover{
 
 
 
-/* =====================
- HERO
-===================== */
+
+
+/* =========================
+HERO
+========================= */
 
 
 .hero{
 
-    width:90%;
 
-    margin:auto;
+width:90%;
 
-    min-height:75vh;
+margin:auto;
 
-    display:flex;
+min-height:80vh;
 
-    justify-content:space-between;
+display:flex;
 
-    align-items:center;
+justify-content:space-between;
 
-    gap:40px;
+align-items:center;
+
+gap:50px;
+
 
 }
 
@@ -188,63 +225,78 @@ nav a:hover{
 
 .hero-content{
 
-    max-width:600px;
+
+max-width:650px;
+
 
 }
+
 
 
 
 .tag{
 
-    color:#8deaff;
 
-    letter-spacing:4px;
+font-size:18px;
 
-    font-size:18px;
+letter-spacing:5px;
+
+color:#8cecff;
+
 
 }
 
 
 
-h1{
+.hero h1{
 
-    font-size:70px;
 
-    line-height:1.1;
+font-size:75px;
 
-    margin:20px 0;
+line-height:1.1;
+
+margin:20px 0;
+
 
 }
 
 
 
-h1 span{
+.hero h1 span{
 
-    color:#8deaff;
+
+color:#8cecff;
+
 
 }
 
 
 
-.hero-content h2{
+.hero h2{
 
-    font-size:30px;
 
-    font-weight:400;
+font-size:30px;
+
+font-weight:400;
+
 
 }
 
 
 
-.description{
+.desc{
 
-    margin-top:20px;
 
-    font-size:18px;
+margin-top:25px;
 
-    color:#e4f8ff;
+font-size:18px;
+
+color:#e4f8ff;
+
 
 }
+
+
 
 
 
@@ -253,54 +305,61 @@ h1 span{
 /* BUTTON */
 
 
-.btn-group{
-
-    display:flex;
-
-    gap:20px;
-
-    margin-top:35px;
-
-}
+.buttons{
 
 
+margin-top:40px;
 
-.btn-group a{
+display:flex;
 
-
-    text-decoration:none;
-
-    color:white;
-
-    padding:14px 35px;
-
-    border-radius:50px;
-
-
-    background:
-
-    linear-gradient(
-    90deg,
-    #00c6ff,
-    #0072ff
-    );
-
-
-    box-shadow:
-
-    0 0 25px #00c6ff;
-
-
-    transition:.4s;
+gap:20px;
 
 
 }
 
 
 
-.btn-group a:hover{
 
-    transform:translateY(-8px);
+.buttons a{
+
+
+text-decoration:none;
+
+color:white;
+
+
+padding:15px 40px;
+
+
+border-radius:50px;
+
+
+background:
+
+linear-gradient(
+90deg,
+#00c6ff,
+#0072ff
+);
+
+
+box-shadow:
+
+0 0 30px rgba(0,198,255,.7);
+
+
+transition:.4s;
+
+
+}
+
+
+
+.buttons a:hover{
+
+
+transform:translateY(-8px);
+
 
 }
 
@@ -308,92 +367,98 @@ h1 span{
 
 
 
-/* =====================
- PROFILE CARD
-===================== */
+
+
+/* =========================
+PROFILE CARD
+========================= */
 
 
 .profile-card{
 
 
-    width:390px;
-
-    padding:35px;
+width:390px;
 
 
-    background:
-
-    rgba(255,255,255,.15);
+padding:35px;
 
 
-    backdrop-filter:blur(20px);
+background:
+
+rgba(255,255,255,.15);
 
 
-    border:
-
-    1px solid rgba(255,255,255,.3);
+backdrop-filter:blur(20px);
 
 
-    border-radius:40px;
+border-radius:40px;
 
 
-    text-align:center;
+border:
 
-
-    box-shadow:
-
-    0 30px 70px rgba(0,0,0,.3);
+1px solid rgba(255,255,255,.3);
 
 
 
-}
+text-align:center;
 
 
+box-shadow:
 
-
-
-.image-box{
-
-
-    width:260px;
-
-    height:330px;
-
-    margin:auto;
-
-
-    overflow:hidden;
-
-
-    border-radius:30px;
-
-
-    border:5px solid white;
+0 30px 70px rgba(0,0,0,.35);
 
 
 }
 
 
 
-.image-box img{
+.image-border{
 
 
-    width:100%;
+width:270px;
 
-    height:100%;
+height:330px;
 
-    object-fit:cover;
+
+margin:auto;
+
+
+border-radius:35px;
+
+
+overflow:hidden;
+
+
+border:5px solid rgba(255,255,255,.7);
+
 
 }
+
+
+
+.image-border img{
+
+
+width:100%;
+
+height:100%;
+
+
+object-fit:cover;
+
+
+}
+
+
 
 
 
 .profile-card h2{
 
 
-    margin-top:20px;
+font-size:32px;
 
-    font-size:32px;
+margin-top:20px;
 
 
 }
@@ -402,56 +467,8 @@ h1 span{
 
 .profile-card p{
 
-    color:#c7f3ff;
 
-}
-
-
-
-
-
-/* MINI INFO */
-
-
-.mini-info{
-
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:15px;
-
-    margin-top:30px;
-
-
-}
-
-
-
-.mini-info div{
-
-
-    background:
-
-    rgba(255,255,255,.15);
-
-
-    padding:15px;
-
-    border-radius:20px;
-
-
-}
-
-
-
-.mini-info h3{
-
-
-    color:#8deaff;
-
-    font-size:25px;
+color:#bdefff;
 
 
 }
@@ -460,87 +477,274 @@ h1 span{
 
 
 
-/* =====================
- FEATURE
-===================== */
+/* STATS */
 
 
-.feature{
+.stats{
 
 
-    width:90%;
-
-    margin:60px auto;
+margin-top:30px;
 
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(3,1fr);
 
-    gap:25px;
+
+gap:15px;
 
 
 }
 
 
 
-.box{
+.stats div{
 
 
-    background:
-
-    rgba(255,255,255,.15);
+padding:15px;
 
 
-    backdrop-filter:blur(15px);
+border-radius:20px;
 
 
-    padding:30px;
+background:
 
-
-    border-radius:30px;
-
-
-    text-align:center;
-
-
-    border:
-
-    1px solid rgba(255,255,255,.2);
-
-
-    transition:.4s;
+rgba(255,255,255,.15);
 
 
 }
 
 
 
-.box:hover{
+.stats h3{
 
 
-    transform:translateY(-15px);
+font-size:28px;
+
+color:#8cecff;
 
 
 }
 
 
 
-.icon{
 
-    font-size:45px;
+
+
+
+
+/* =========================
+MENU CARD
+========================= */
+
+
+.menu-card{
+
+
+width:90%;
+
+margin:60px auto;
+
+
+display:grid;
+
+
+grid-template-columns:repeat(4,1fr);
+
+
+gap:25px;
+
 
 }
 
 
 
-.box h3{
 
-    margin:15px 0;
+.menu-card div{
 
-    color:#8deaff;
+
+background:
+
+rgba(255,255,255,.15);
+
+
+backdrop-filter:blur(15px);
+
+
+border-radius:30px;
+
+
+padding:30px;
+
+
+text-align:center;
+
+
+border:
+
+1px solid rgba(255,255,255,.2);
+
+
+
+transition:.4s;
+
 
 }
+
+
+
+.menu-card div:hover{
+
+
+transform:translateY(-15px);
+
+
+}
+
+
+
+.menu-card h1{
+
+
+font-size:45px;
+
+
+}
+
+
+
+.menu-card h3{
+
+
+margin:15px 0;
+
+color:#8cecff;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+PROJECT PREVIEW
+========================= */
+
+
+.preview{
+
+
+width:90%;
+
+margin:80px auto;
+
+
+}
+
+
+
+.preview>h1{
+
+
+text-align:center;
+
+font-size:45px;
+
+margin-bottom:40px;
+
+
+}
+
+
+
+.project-box{
+
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+
+}
+
+
+
+.project-card{
+
+
+background:
+
+rgba(255,255,255,.15);
+
+
+border-radius:30px;
+
+
+overflow:hidden;
+
+
+backdrop-filter:blur(15px);
+
+
+transition:.4s;
+
+
+}
+
+
+
+.project-card:hover{
+
+
+transform:scale(1.05);
+
+
+}
+
+
+
+.project-card img{
+
+
+width:100%;
+
+
+height:280px;
+
+
+object-fit:cover;
+
+
+}
+
+
+
+.project-card h3{
+
+
+padding:15px 25px;
+
+
+font-size:25px;
+
+
+}
+
+
+
+.project-card p{
+
+
+padding:0 25px 25px;
+
+
+}
+
 
 
 
@@ -552,13 +756,15 @@ h1 span{
 footer{
 
 
-    text-align:center;
+text-align:center;
 
-    padding:40px;
 
-    background:
+padding:50px;
 
-    rgba(0,0,0,.15);
+
+background:
+
+rgba(0,0,0,.2);
 
 
 }
@@ -567,7 +773,9 @@ footer{
 
 footer h2{
 
-    letter-spacing:3px;
+
+letter-spacing:3px;
+
 
 }
 
@@ -575,7 +783,12 @@ footer h2{
 
 
 
-/* MOBILE */
+
+
+
+/* =========================
+MOBILE
+========================= */
 
 
 @media(max-width:900px){
@@ -583,9 +796,11 @@ footer h2{
 
 header{
 
-    flex-direction:column;
 
-    gap:20px;
+flex-direction:column;
+
+gap:20px;
+
 
 }
 
@@ -593,9 +808,11 @@ header{
 
 nav{
 
-    flex-wrap:wrap;
 
-    justify-content:center;
+flex-wrap:wrap;
+
+justify-content:center;
+
 
 }
 
@@ -603,17 +820,21 @@ nav{
 
 .hero{
 
-    flex-direction:column;
 
-    text-align:center;
+flex-direction:column;
+
+text-align:center;
+
 
 }
 
 
 
-h1{
+.hero h1{
 
-    font-size:45px;
+
+font-size:45px;
+
 
 }
 
@@ -621,25 +842,42 @@ h1{
 
 .profile-card{
 
-    width:330px;
+
+width:330px;
+
 
 }
 
 
 
-.feature{
+.menu-card{
 
-    grid-template-columns:1fr;
+
+grid-template-columns:1fr;
+
 
 }
 
 
 
-.btn-group{
+.project-box{
 
-    justify-content:center;
+
+grid-template-columns:1fr;
+
 
 }
+
+
+
+.buttons{
+
+
+justify-content:center;
+
+
+}
+
 
 
 }
